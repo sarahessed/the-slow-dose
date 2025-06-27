@@ -1,0 +1,18 @@
+---
+title: "What is the effect 2?"
+image: /images/example.jpg
+date: 2025-06-27
+---
+
+This is your article text. You can write as much as you like here.
+
+Use **bold**, _italics_, or even `code`.
+
+You can also add:
+
+- Bullet points
+- Quotes like this:
+> “Food is medicine.”
+- Line breaks and sections
+
+To add a new image, upload it into the `images/` folder of the repo, then update the `image:` path in the header.
