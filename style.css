@@ -1,0 +1,31 @@
+body {
+  font-family: sans-serif;
+  background: white;
+  color: black;
+  margin: 0;
+  padding: 2rem;
+}
+main {
+  max-width: 800px;
+  margin: auto;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+.grid a {
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #eee;
+  padding: 1rem;
+  display: block;
+  transition: 0.2s;
+}
+.grid a:hover {
+  background: #f9f9f9;
+}
+.grid img {
+  max-width: 100%;
+  height: auto;
+}
