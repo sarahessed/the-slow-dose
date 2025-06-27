@@ -1,18 +1,17 @@
----
-title: "What is the effect 2?"
-image: /images/example.jpg
-date: 2025-06-27
----
-
-This is your article text. You can write as much as you like here.
-
-Use **bold**, _italics_, or even `code`.
-
-You can also add:
-
-- Bullet points
-- Quotes like this:
-> “Food is medicine.”
-- Line breaks and sections
-
-To add a new image, upload it into the `images/` folder of the repo, then update the `image:` path in the header.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What is the effect of?</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <main>
+    <a href="../index.html">← Back</a>
+    <h1>What is the effect of?</h1>
+    <img src="../images/sample.jpg" alt="Sample" />
+    <p>This is a placeholder article for testing. Edit this via the CMS.</p>
+  </main>
+</body>
+</html>
