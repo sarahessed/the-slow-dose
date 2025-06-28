@@ -58,3 +58,7 @@ footer a {
     color: white;
     text-decoration: underline;
 }
+
+.container.left {
+    text-align: left;
+}
