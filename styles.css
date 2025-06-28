@@ -1,11 +1,9 @@
 html {
-    background: #E5F3FF;
-    height: 100%;
+    background: #E5F3FF; /* dit zie je onder je pagina als je doorscrollt */
 }
 
 body {
-    background: white;
-    min-height: 100%;
+    background: white;   /* de normale kleur van je pagina zelf */
     margin: 0;
     padding: 0;
     font-family: 'Inter', Helvetica, Arial, sans-serif;
