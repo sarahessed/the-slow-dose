@@ -1,7 +1,7 @@
-body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+html, body {
     margin: 0;
     padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     background: white;
     color: #000;
     display: flex;
@@ -22,7 +22,7 @@ h1 {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     max-width: 900px;
     margin: 0 auto;
@@ -41,17 +41,20 @@ h1 {
 }
 
 footer {
-    background: #44d000; /* bright green */
+    background: #44d000;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1em 2em;
     font-size: 12px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 footer a {
     color: white;
     text-decoration: underline;
 }
+
 
