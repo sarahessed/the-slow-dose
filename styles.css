@@ -1,8 +1,14 @@
-html, body {
+html {
+    background: #E5F3FF;
+    min-height: 100%;
+}
+
+body {
+    background: #E5F3FF;
+    min-height: 100%;
     margin: 0;
     padding: 0;
     font-family: 'Inter', Helvetica, Arial, sans-serif;
-    background: WHITE; 
     color: #000;
     display: flex;
     flex-direction: column;
