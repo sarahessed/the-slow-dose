@@ -18,7 +18,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px 20px;
+    padding: 60px 20px 100px; /* zorgt dat wit altijd onderaan zit */
 }
 
 h1 {
