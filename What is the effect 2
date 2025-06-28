@@ -1,17 +1,1 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>What is the effect of?</title>
-  <link rel="stylesheet" href="../style.css" />
-</head>
-<body>
-  <main>
-    <a href="../index.html">← Back</a>
-    <h1>What is the effect of?</h1>
-    <img src="../images/sample.jpg" alt="Sample" />
-    <p>This is a placeholder article for testing. Edit this via the CMS.</p>
-  </main>
-</body>
-</html>
+
