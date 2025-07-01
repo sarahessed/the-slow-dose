@@ -4,14 +4,6 @@
     width: 100%;
 }
 
-/* Fallback naar lokaal geüploade Helvetica Neue */
-@font-face {
-    font-family: "Helvetica Neue";
-    src: url("fonts/HelveticaNeue-Regular.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
-}
-
 /* System font stack zoals bij Pien Studios */
 html, body {
     margin: 0;
