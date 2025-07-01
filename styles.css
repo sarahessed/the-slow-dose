@@ -22,6 +22,7 @@ html, body {
     margin: 0 auto;
     padding: 0 20px;
     padding-bottom: 20px;
+    flex: 1;
 }
 
 /* Voor artikeltekst */
