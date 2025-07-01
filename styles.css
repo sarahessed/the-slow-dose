@@ -16,10 +16,16 @@ html, body {
     box-sizing: border-box;
 }
 
-.container.left {
-    max-width: 800px;
+/* Algemeen container */
+.container {
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+/* Voor artikeltekst */
+.container.left {
+    max-width: 800px;
     text-align: justify;
     line-height: 1.7;
 }
@@ -33,7 +39,7 @@ h1 {
 h2 {
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
-    font-weight: strong;
+    font-weight: bold;
     margin-bottom: 1px;
 
 }
