@@ -16,12 +16,11 @@ html, body {
     box-sizing: border-box;
 }
 
-.container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 60px 20px 100px; /* zorgt dat wit altijd onderaan zit */
+.container.left {
+    max-width: 700px; /* net zoals een artikel op een blog */
+    margin: 0 auto;   /* center het blok */
+    text-align: justify; /* mooie uitgelijnde blokken */
+    line-height: 1.7; /* voor wat ademruimte */
 }
 
 h1 {
