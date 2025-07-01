@@ -17,10 +17,10 @@ html, body {
 }
 
 .container.left {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 0 100px;
-    text-align: justify;
+    padding: 0 20px;
+    text-align: justify-all;
     line-height: 1.7;
 }
 
