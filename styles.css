@@ -69,3 +69,12 @@ footer a {
 .container.left {
     text-align: left;
 }
+
+a {
+    color: black;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: black;
+}
