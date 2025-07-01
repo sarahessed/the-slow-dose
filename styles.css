@@ -17,11 +17,13 @@ html, body {
 }
 
 .container.left {
-    max-width: 700px; /* net zoals een artikel op een blog */
-    margin: 0 auto;   /* center het blok */
-    text-align: justify; /* mooie uitgelijnde blokken */
-    line-height: 1.7; /* voor wat ademruimte */
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: justify;
+    line-height: 1.7;
 }
+
 
 h1 {
     font-size: 48px;
