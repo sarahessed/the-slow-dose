@@ -21,7 +21,7 @@ html, body {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
-    padding-bottom: 60px;
+    padding-bottom: 10px;
 }
 
 /* Voor artikeltekst */
@@ -29,7 +29,7 @@ html, body {
     max-width: 800px;
     text-align: justify;
     line-height: 1.7;
-    padding-bottom: 60px;
+    padding-bottom: 10px;
 }
 
 h1 {
