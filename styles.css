@@ -50,7 +50,7 @@ html, body {
 .sound-control {
     position: absolute;
     top: 35px;
-    left: -170px;
+    left: -150px;
 }
 
 .sound-control a {
@@ -60,10 +60,10 @@ html, body {
     font-weight: normal;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
     .sound-control {
         position: relative;
-        top: 5px; /* net als .home-link */
+        top: 5px;
         left: 0;
         margin-bottom: 20px;
     }
