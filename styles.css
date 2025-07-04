@@ -50,7 +50,7 @@ html, body {
 .sound-control {
     position: absolute;
     top: 300px; /* schuif omhoog/omlaag zoals je wilt */
-    left: -100px; /* schuif meer naar links zoals je wilt */
+    left: -200px; /* schuif meer naar links zoals je wilt */
 }
 
 .sound-control a {
