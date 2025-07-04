@@ -36,7 +36,13 @@ html, body {
     margin-bottom: 20px;
 }
 
-.top-links a {
+.top-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.top-link {
     text-decoration: underline;
     color: black;
     font-size: 1rem;
