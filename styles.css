@@ -20,7 +20,7 @@ html, body {
     display: inline-block;
     position: relative;
     top: 10px; /* iets lager vanaf de topbar */
-    left: 20px; /* afstand vanaf de linkerkant van de pagina */
+    left: 0px; /* afstand vanaf de linkerkant van de pagina */
     margin-bottom: 0;
     font-size: 1rem;
     font-weight: normal;
