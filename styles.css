@@ -50,7 +50,7 @@ html, body {
 .sound-control {
     position: absolute;
     top: 250px;
-    left: -150px;
+    left: -180px;
 }
 
 .sound-control a {
