@@ -16,6 +16,19 @@ html, body {
     box-sizing: border-box;
 }
 
+.home-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333; /* of welke kleur je ook gebruikt */
+}
+
+.home-link:hover {
+    text-decoration: underline;
+}
+
 /* Algemeen container */
 .container {
     max-width: 1000px;
