@@ -16,6 +16,10 @@ html, body {
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .home-link {
     display: inline-block;
     position: relative;
@@ -50,7 +54,7 @@ html, body {
 }
 
 .container {
-    position: relative; /* nodig zodat absolute werkt binnen container */
+    position: relative;
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
@@ -58,7 +62,6 @@ html, body {
     flex: 1;
 }
 
-/* Voor artikeltekst */
 .container.left {
     max-width: 800px;
     text-align: justify;
@@ -154,7 +157,6 @@ a:hover {
     color: black;
 }
 
-/* Media query voor mobiele schermen */
 @media (max-width: 900px) {
     .sound-control {
         position: relative;
@@ -162,21 +164,5 @@ a:hover {
         left: 0;
         margin-bottom: 20px;
     }
-
-    .top-button {
-        display: flex;
-        justify-content: flex-end;
-        margin-top: 20px;
-    }
-
-    .top-link {
-        text-decoration: underline;
-        color: black;
-        font-size: 1rem;
-        font-weight: normal;
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
 }
+
