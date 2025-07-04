@@ -115,16 +115,17 @@ ol li, ul li {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 0;
-    max-width: 1000px;
     width: 100%;
+    max-width: 1000px;
 }
 
 .grid a img {
     width: 100%;
+    height: auto;
     display: block;
-    transition: transform 0.3s ease;
+    object-fit: cover;
 }
 
 .grid a img:hover {
