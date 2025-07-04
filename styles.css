@@ -67,6 +67,21 @@ html, body {
         left: 0;
         margin-bottom: 20px;
     }
+
+    .top-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.top-link {
+    text-decoration: underline;
+    color: black;
+    font-size: 1rem;
+    font-weight: normal;
+}
+    html {
+    scroll-behavior: smooth;
 }
 /* Algemeen container */
 .container {
