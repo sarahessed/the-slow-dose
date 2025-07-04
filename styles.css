@@ -126,6 +126,7 @@ ol li, ul li {
     height: auto;
     display: block;
     object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
 .grid a img:hover {
@@ -158,6 +159,7 @@ a:hover {
     color: black;
 }
 
+/* Media query voor mobiele schermen */
 @media (max-width: 900px) {
     .sound-control {
         position: relative;
@@ -166,4 +168,3 @@ a:hover {
         margin-bottom: 20px;
     }
 }
-
