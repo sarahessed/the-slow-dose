@@ -18,11 +18,14 @@ html, body {
 
 .home-link {
     display: inline-block;
-    margin-bottom: 1rem;
+    position: relative;
+    top: 10px; /* iets lager vanaf de topbar */
+    left: 20px; /* afstand vanaf de linkerkant van de pagina */
+    margin-bottom: 0;
     font-size: 1rem;
     font-weight: normal;
     text-decoration: underline;
-    color: black; /* of welke kleur je ook gebruikt */
+    color: black;
 }
 
 .home-link:hover {
