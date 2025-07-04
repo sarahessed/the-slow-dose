@@ -19,7 +19,7 @@ html, body {
 .home-link {
     display: inline-block;
     position: relative;
-    top: 10px; /* iets lager vanaf de topbar */
+    top: 5px; /* iets lager vanaf de topbar */
     left: 0px; /* afstand vanaf de linkerkant van de pagina */
     margin-bottom: 0;
     font-size: 1rem;
