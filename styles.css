@@ -21,6 +21,19 @@ html {
     overflow-y: scroll;
 }
 
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background: #0064fa;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #66ff00;
+    border-radius: 6px;
+    border: 3px solid #0064fa;
+}
+
 .home-link {
     display: inline-block;
     position: relative;
