@@ -28,7 +28,18 @@ html, body {
     color: black;
 }
 
-.home-link:hover {
+.about-link {
+    display: inline-block;
+    position: absolute;
+    top: 5px; /* zelfde hoogte als je HOME */
+    right: 20px; /* afstand vanaf rechterkant */
+    font-size: 1rem;
+    font-weight: normal;
+    text-decoration: underline;
+    color: black;
+}
+
+.about-link:hover {
     text-decoration: underline;
 }
 
