@@ -49,7 +49,7 @@ html, body {
 
 .sound-control {
     position: absolute;
-    top: 0px; /* schuif omhoog/omlaag zoals je wilt */
+    top: 5px; /* schuif omhoog/omlaag zoals je wilt */
     left: 0px; /* schuif meer naar links zoals je wilt */
 }
 
