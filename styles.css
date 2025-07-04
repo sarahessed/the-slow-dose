@@ -28,19 +28,19 @@ html, body {
     color: black;
 }
 
-.about-link {
-    display: inline-block;
-    position: absolute;
-    top: 5px; /* zelfde hoogte als je HOME */
-    right: 20px; /* afstand vanaf rechterkant */
-    font-size: 1rem;
-    font-weight: normal;
-    text-decoration: underline;
-    color: black;
+.top-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
-.about-link:hover {
+.top-links a {
     text-decoration: underline;
+    color: black;
+    font-size: 1rem;
+    font-weight: normal;
 }
 
 /* Algemeen container */
