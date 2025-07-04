@@ -11,16 +11,14 @@
     <div class="topbar"></div>
 
     <div class="container">
-       <div class="sound-control">
-    <a href="javascript:void(0);" onclick="toggleSound()" id="sound-link">
-        <span id="sound-icon">▶</span> <span id="sound-text">Play soothing sounds</span>
-    </a>
-</div>
-    </a>
-          <audio id="soothing-audio" loop>
-    <source src="sounds/noise-of-birds-on-the-watercourse-206341.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
+        <div class="sound-control">
+            <a href="javascript:void(0);" onclick="toggleSound()" id="sound-link">
+                <span id="sound-icon">▶</span> <span id="sound-text">Play soothing sounds</span>
+            </a>
+            <audio id="soothing-audio" loop>
+                <source src="sounds/noise-of-birds-on-the-watercourse-206341.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
         </div>
 
         <h3>THE SLOW DOSE</h3>
@@ -44,21 +42,22 @@
         </div>
     </footer>
 
-  <script>
-function toggleSound() {
-    var audio = document.getElementById("soothing-audio");
-    var icon = document.getElementById("sound-icon");
-    var text = document.getElementById("sound-text");
-    if (audio.paused) {
-        audio.play();
-        icon.textContent = "❚❚";
-        text.textContent = "Pause";
-    } else {
-        audio.pause();
-        icon.textContent = "▶";
-        text.textContent = "Play soothing sounds";
+    <script>
+    function toggleSound() {
+        var audio = document.getElementById("soothing-audio");
+        var icon = document.getElementById("sound-icon");
+        var text = document.getElementById("sound-text");
+        if (audio.paused) {
+            audio.play();
+            icon.textContent = "❚❚";
+            text.textContent = "Pause";
+        } else {
+            audio.pause();
+            icon.textContent = "▶";
+            text.textContent = "Play soothing sounds";
+        }
     }
-}
-</script>
+    </script>
 </body>
 </html>
+
