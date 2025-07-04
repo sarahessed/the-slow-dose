@@ -49,7 +49,7 @@ html, body {
 
 .sound-control {
     position: absolute;
-    top: 250px;
+    top: 0px;
     left: -180px;
 }
 
@@ -64,7 +64,7 @@ html, body {
 @media (max-width: 600px) {
     .sound-control {
         position: relative;
-        top: 0;
+        top: 5px;
         left: 0;
         margin-bottom: 20px;
     }
