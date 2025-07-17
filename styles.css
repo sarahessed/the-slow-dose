@@ -145,6 +145,38 @@ footer {
     box-sizing: border-box;
 }
 
+.custom-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    padding: 20px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.footer-left,
+.footer-right {
+    flex: 1 1 100%;
+    margin: 5px 0;
+}
+
+/* Grotere schermen */
+@media (min-width: 600px) {
+    .custom-footer {
+        flex-wrap: nowrap;
+        text-align: left;
+    }
+
+    .footer-left,
+    .footer-right {
+        flex: 1;
+        margin: 0;
+    }
+}
+
+
 footer a {
     color: white;
     text-decoration: underline;
