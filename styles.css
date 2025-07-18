@@ -169,3 +169,28 @@ a:hover {
         margin-bottom: 20px;
     }
 }
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 0;
+    }
+
+    .grid a img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    h3 {
+        font-size: 32px;
+    }
+
+    h4 {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+}
+
