@@ -172,37 +172,46 @@ a:hover {
   margin-bottom: 20px;
 }
 
-.top-button {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 20px;
-}
-
-.top-link {
-  text-decoration: underline;
-  color: black;
-  font-size: 1rem;
-  font-weight: normal;
-}
-
-/* Mobiele view */
-@media (max-width: 900px) {
-  .sound-control {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    position: relative;
-    left: 0;
-    top: 0;
-  }
-
-  footer {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-
-  .footer-left,
-  .footer-right {
-    text-align: center;
-  }
-}
+diff --git a/styles.css b/styles.css
+index c72c5cae9f73c29e6ebd6af1881174b38b8b80e6..b3acc256fe89f343d0b2f0c1af5fcd9b2df76c9a 100644
+--- a/styles.css
++++ b/styles.css
+@@ -174,35 +174,35 @@ a:hover {
+ 
+ .top-button {
+   display: flex;
+   justify-content: flex-end;
+   margin-top: 20px;
+ }
+ 
+ .top-link {
+   text-decoration: underline;
+   color: black;
+   font-size: 1rem;
+   font-weight: normal;
+ }
+ 
+ /* Mobiele view */
+ @media (max-width: 900px) {
+   .sound-control {
+     margin-top: 10px;
+     margin-bottom: 20px;
+     position: relative;
+     left: 0;
+     top: 0;
+   }
+ 
+   footer {
+-    flex-direction: column;
+-    text-align: center;
++    flex-direction: row;
++    justify-content: space-between;
+     gap: 10px;
+   }
+ 
+   .footer-left,
+   .footer-right {
+-    text-align: center;
++    text-align: inherit;
+   }
+ }
