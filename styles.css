@@ -1,4 +1,4 @@
-/* Algemene reset en box-model fix */
+/* Basis instellingen */
 * {
   box-sizing: border-box;
 }
@@ -13,60 +13,59 @@ html, body {
   flex-direction: column;
   min-height: 100vh;
   scroll-behavior: smooth;
-  overflow-x: hidden; /* Belangrijk! voorkomt horizontale scroll */
+  overflow-x: hidden; /* voorkomt horizontale scroll */
 }
 
-/* Bovenste blauwe balk */
+/* Topbalk */
 .topbar {
   background: #0064fa;
   height: 15px;
   width: 100%;
 }
 
-/* Container */
+/* Container hoofdinhoud */
 .container {
-  position: relative;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 10px 20px;
+  padding: 0 20px 20px;
   flex: 1;
 }
 
-/* Artikel grid */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 0;
-  width: 100%;
-  max-width: 1000px;
-  margin-top: 20px;
+.container.left {
+  max-width: 800px;
+  text-align: justify;
+  line-height: 1.7;
+  padding-bottom: 10px;
 }
 
-/* Vierkante gridblokken */
-.grid a {
+/* Geluidsknop */
+.sound-control {
   position: relative;
-  width: 100%;
-  padding-top: 100%;
-  overflow: hidden;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-/* Beeldvullende afbeeldingen */
-.grid a img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.grid a img:hover {
-  transform: scale(1.05);
+.sound-control a {
+  text-decoration: underline;
+  color: black;
+  font-size: 1rem;
+  font-weight: normal;
 }
 
 /* Titels */
+h1 {
+  font-size: 40px;
+  font-weight: normal;
+  margin-bottom: 1px;
+  text-align: left;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 1px;
+}
+
 h3 {
   font-size: 60px;
   font-weight: normal;
@@ -81,17 +80,39 @@ h4 {
   text-align: center;
 }
 
-/* Sound-control (nu niet breder dan scherm) */
-.sound-control {
-  position: relative;
-  margin: 20px 0;
+/* Lijsten */
+ol li, ul li {
+  margin-bottom: 10px;
 }
 
-.sound-control a {
-  text-decoration: underline;
-  color: black;
-  font-size: 1rem;
-  font-weight: normal;
+/* Grid van afbeeldingen */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 20px;
+}
+
+/* Vierkante afbeeldingsblokken */
+.grid a {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* moderne manier voor vierkant */
+  overflow: hidden;
+}
+
+.grid a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.grid a img:hover {
+  transform: scale(1.05);
 }
 
 /* Footer */
@@ -130,8 +151,50 @@ a:hover {
   color: black;
 }
 
-/* Mobiele aanpassingen */
+/* Extra navigatie bovenaan */
+.home-link {
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  left: 0;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: normal;
+  text-decoration: underline;
+  color: black;
+}
+
+.top-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.top-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.top-link {
+  text-decoration: underline;
+  color: black;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+/* Mobiele view */
 @media (max-width: 900px) {
+  .sound-control {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+
   footer {
     flex-direction: column;
     text-align: center;
@@ -141,13 +204,5 @@ a:hover {
   .footer-left,
   .footer-right {
     text-align: center;
-  }
-
-  .sound-control {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    position: relative;
-    top: 0;
-    left: 0;
   }
 }
