@@ -43,63 +43,71 @@
     <meta name="msapplication-square150x150logo" content="/icons/ms-icon-150x150.png">
     <meta name="msapplication-square310x310logo" content="/icons/ms-icon-310x310.png">
 
-    <meta name="theme-color" content="#0064fa" />
-    <link rel="stylesheet" href="/styles.css" />
-</head>
-    
-<body>
-    <div class="topbar"></div>
-
-    <div class="container">
-        <div class="sound-control">
-            <a href="javascript:void(0);" onclick="toggleSound()" id="sound-link">
-                <span id="sound-icon">▶</span> <span id="sound-text">Play soothing sounds</span>
-            </a>
-            <audio id="soothing-audio" loop>
-                <source src="/sounds/noise-of-birds-on-the-watercourse-206341.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-
-        <h3>THE SLOW DOSE</h3>
-        <h4>A journal on nutrition, health, and slowing down.</h4>
-        
-        <div class="grid">
-            <a href="/articles/Skincare-less-is-more.html">
-                <img src="/images/IMG_2330.JPG" alt="Article 3">  
-                
-            <a href="/articles/The-morning-lineup-nourishing-food-to-start-your-day.html">
-                <img src="/images/IMG_2232.png" alt="Article 2">  
-            </a>
-            <a href="/articles/The-confusing-world-of-dental-care.html">
-                <img src="/images/IMG_2242.jpg" alt="Article 1">     
-            </a>    
-        </div>
-    </div>
-
-    <footer> 
-        <div class="footer-left">2025</div>
-        <div class="footer-right">
-            inbox: <a href="mailto:theslowdose@gmail.com">theslowdose@gmail.com</a><br/>
-            updates: <a href="https://www.instagram.com/theslowdose" target="_blank">@theslowdose</a>
-        </div>
-    </footer>
-
-    <script>
-    function toggleSound() {
-        var audio = document.getElementById("soothing-audio");
-        var icon = document.getElementById("sound-icon");
-        var text = document.getElementById("sound-text");
-        if (audio.paused) {
-            audio.play();
-            icon.textContent = "❚❚";
-            text.textContent = "Pause";
-        } else {
-            audio.pause();
-            icon.textContent = "▶";
-            text.textContent = "Play soothing sounds";
-        }
-    }
-    </script>
-</body>
-</html>
+   diff --git a/index.html b/index.html
+index 82526cc06b84f2a8a989072de9c88cc2bc920f87..21c166f2c3630173ca135c96d27b53eb640cf894 100644
+--- a/index.html
++++ b/index.html
+@@ -44,58 +44,58 @@
+     <meta name="msapplication-square310x310logo" content="/icons/ms-icon-310x310.png">
+ 
+     <meta name="theme-color" content="#0064fa" />
+     <link rel="stylesheet" href="/styles.css" />
+ </head>
+     
+ <body>
+     <div class="topbar"></div>
+ 
+     <div class="container">
+         <div class="sound-control">
+             <a href="javascript:void(0);" onclick="toggleSound()" id="sound-link">
+                 <span id="sound-icon">▶</span> <span id="sound-text">Play soothing sounds</span>
+             </a>
+             <audio id="soothing-audio" loop>
+                 <source src="/sounds/noise-of-birds-on-the-watercourse-206341.mp3" type="audio/mpeg">
+                 Your browser does not support the audio element.
+             </audio>
+         </div>
+ 
+         <h3>THE SLOW DOSE</h3>
+         <h4>A journal on nutrition, health, and slowing down.</h4>
+         
+         <div class="grid">
+             <a href="/articles/Skincare-less-is-more.html">
+-                <img src="/images/IMG_2330.JPG" alt="Article 3">  
+-                
++                <img src="/images/IMG_2330.JPG" alt="Article 3">
++            </a>
+             <a href="/articles/The-morning-lineup-nourishing-food-to-start-your-day.html">
+-                <img src="/images/IMG_2232.png" alt="Article 2">  
++                <img src="/images/IMG_2232.png" alt="Article 2">
+             </a>
+             <a href="/articles/The-confusing-world-of-dental-care.html">
+-                <img src="/images/IMG_2242.jpg" alt="Article 1">     
+-            </a>    
++                <img src="/images/IMG_2242.jpg" alt="Article 1">
++            </a>
+         </div>
+     </div>
+ 
+     <footer> 
+         <div class="footer-left">2025</div>
+         <div class="footer-right">
+             inbox: <a href="mailto:theslowdose@gmail.com">theslowdose@gmail.com</a><br/>
+             updates: <a href="https://www.instagram.com/theslowdose" target="_blank">@theslowdose</a>
+         </div>
+     </footer>
+ 
+     <script>
+     function toggleSound() {
+         var audio = document.getElementById("soothing-audio");
+         var icon = document.getElementById("sound-icon");
+         var text = document.getElementById("sound-text");
+         if (audio.paused) {
+             audio.play();
+             icon.textContent = "❚❚";
+             text.textContent = "Pause";
+         } else {
+             audio.pause();
+             icon.textContent = "▶";
+             text.textContent = "Play soothing sounds";
+         }
