@@ -1,4 +1,4 @@
-/* Algemene instellingen */
+/* Basis */
 * {
   box-sizing: border-box;
 }
@@ -19,14 +19,14 @@ html, body {
   width: 100%;
 }
 
-/* Container hoofdinhoud */
+/* Container */
 .container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* Geluidsknop – zichtbaar, niet buiten beeld */
+/* Geluidsknop */
 .sound-control {
   position: relative;
   margin: 20px 0;
@@ -51,7 +51,7 @@ h4 {
   margin-bottom: 40px;
 }
 
-/* Grid met rechte vierkante afbeeldingen */
+/* Grid */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -59,26 +59,22 @@ h4 {
   margin-top: 20px;
 }
 
-/* Vierkant blok met rechte hoeken */
-.grid a {
-  display: block;
+/* Vierkante afbeelding */
+.square {
   width: 100%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
 }
 
-/* Afbeelding zonder afgeronde hoeken */
-.grid a img {
+.square img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
   transition: transform 0.3s ease;
-  border: none;
 }
 
-/* Hover-effect optioneel */
-.grid a img:hover {
+.square img:hover {
   transform: scale(1.05);
 }
 
@@ -91,7 +87,6 @@ footer {
   align-items: center;
   padding: 20px 40px;
   font-size: 14px;
-  flex-wrap: wrap;
 }
 
 footer a {
@@ -107,11 +102,10 @@ footer a {
   text-align: right;
 }
 
-/* Responsiviteit: footer onder elkaar op mobiel */
+/* Mobiel footer stacken */
 @media (max-width: 600px) {
   footer {
     flex-direction: column;
-    align-items: center;
     text-align: center;
     gap: 10px;
   }
@@ -122,4 +116,3 @@ footer a {
     text-align: center;
   }
 }
-
