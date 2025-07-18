@@ -1,4 +1,4 @@
-/* Basisopmaak */
+/* === Basisstijl === */
 html, body {
     margin: 0;
     padding: 0;
@@ -10,26 +10,27 @@ html, body {
     min-height: 100vh;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    overflow-x: hidden; /* voorkomt horizontale scroll */
+    overflow-x: hidden; /* voorkomt horizontaal scrollen */
 }
 
-/* Bovenste blauwe balk */
+/* === Topbalk === */
 .topbar {
     background: #0064fa;
     height: 15px;
     width: 100%;
 }
 
-/* Container voor hoofdinhoud */
+/* === Container === */
 .container {
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0 20px 20px;
+    padding: 0 10px 20px;
     flex: 1;
+    box-sizing: border-box;
 }
 
-/* Extra voor tekstpagina’s */
+/* Voor artikelen/tekstpagina’s */
 .container.left {
     max-width: 800px;
     text-align: justify;
@@ -37,14 +38,13 @@ html, body {
     padding-bottom: 10px;
 }
 
-/* Geluidsknop – desktop */
+/* === Geluidsknop === */
 .sound-control {
     position: relative;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-/* Geluidsknop styling */
 .sound-control a {
     text-decoration: underline;
     color: black;
@@ -52,7 +52,7 @@ html, body {
     font-weight: normal;
 }
 
-/* Titels */
+/* === Titels === */
 h1 {
     font-size: 40px;
     font-weight: normal;
@@ -80,12 +80,12 @@ h4 {
     text-align: center;
 }
 
-/* Lijsten */
+/* === Lists === */
 ol li, ul li {
     margin-bottom: 10px;
 }
 
-/* Responsieve artikelgrid */
+/* === Artikel grid met vierkante afbeeldingen === */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -93,19 +93,20 @@ ol li, ul li {
     width: 100%;
     max-width: 1000px;
     margin-top: 20px;
+    box-sizing: border-box;
 }
 
 .grid a {
     display: block;
     overflow: hidden;
-    border-radius: 8px;
+    aspect-ratio: 1 / 1; /* maakt elk grid-item vierkant */
 }
 
 .grid a img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
     object-fit: cover;
+    display: block;
     transition: transform 0.3s ease;
 }
 
@@ -113,7 +114,7 @@ ol li, ul li {
     transform: scale(1.05);
 }
 
-/* Footer */
+/* === Footer === */
 footer {
     background: #39FF14;
     color: white;
@@ -132,7 +133,7 @@ footer a {
     text-decoration: underline;
 }
 
-/* Links */
+/* === Links === */
 a {
     color: black;
     text-decoration: underline;
@@ -142,7 +143,7 @@ a:hover {
     color: black;
 }
 
-/* Home-link bovenaan */
+/* === Navigatie bovenaan === */
 .home-link {
     display: inline-block;
     position: relative;
@@ -155,7 +156,6 @@ a:hover {
     color: black;
 }
 
-/* Extra navigatie bovenaan */
 .top-links {
     display: flex;
     justify-content: space-between;
@@ -177,7 +177,7 @@ a:hover {
     font-weight: normal;
 }
 
-/* Mobiele optimalisatie */
+/* === Mobielvriendelijkheid === */
 @media (max-width: 900px) {
     footer {
         flex-direction: column;
