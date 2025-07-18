@@ -1,4 +1,8 @@
-/* === Basisstijl === */
+/* === Algemene reset en box-model fix === */
+* {
+    box-sizing: border-box;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -8,9 +12,8 @@ html, body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    box-sizing: border-box;
     scroll-behavior: smooth;
-    overflow-x: hidden; /* voorkomt horizontaal scrollen */
+    overflow-x: hidden;
 }
 
 /* === Topbalk === */
@@ -20,17 +23,16 @@ html, body {
     width: 100%;
 }
 
-/* === Container === */
+/* === Container voor hoofdinhoud === */
 .container {
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 10px 20px;
     flex: 1;
-    box-sizing: border-box;
 }
 
-/* Voor artikelen/tekstpagina’s */
+/* Tekstpagina's */
 .container.left {
     max-width: 800px;
     text-align: justify;
@@ -80,12 +82,12 @@ h4 {
     text-align: center;
 }
 
-/* === Lists === */
+/* === Lijsten === */
 ol li, ul li {
     margin-bottom: 10px;
 }
 
-/* === Artikel grid met vierkante afbeeldingen === */
+/* === Artikel-grid met vierkante tegels === */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -93,16 +95,21 @@ ol li, ul li {
     width: 100%;
     max-width: 1000px;
     margin-top: 20px;
-    box-sizing: border-box;
 }
 
+/* Vierkante containers */
 .grid a {
-    display: block;
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* maakt vierkant */
     overflow: hidden;
-    aspect-ratio: 1 / 1; /* maakt elk grid-item vierkant */
 }
 
+/* Beeldvullende afbeeldingen */
 .grid a img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -128,12 +135,21 @@ footer {
     flex-shrink: 0;
 }
 
+/* Footer uitlijning */
+.footer-left {
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+}
+
 footer a {
     color: white;
     text-decoration: underline;
 }
 
-/* === Links === */
+/* === Links algemeen === */
 a {
     color: black;
     text-decoration: underline;
@@ -143,7 +159,7 @@ a:hover {
     color: black;
 }
 
-/* === Navigatie bovenaan === */
+/* === Bovenste navigatieopties === */
 .home-link {
     display: inline-block;
     position: relative;
@@ -183,6 +199,11 @@ a:hover {
         flex-direction: column;
         text-align: center;
         gap: 10px;
+    }
+
+    .footer-left,
+    .footer-right {
+        text-align: center;
     }
 
     .sound-control {
