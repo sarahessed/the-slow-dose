@@ -8,9 +8,9 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 18px;         /* body size */
-    line-height: 1.55;       /* compacter, zoals Pien Studios */
-    letter-spacing: 0em;     /* geen extra spacing */
+    font-size: 18px;
+    line-height: 1.55;         /* fijne leesbaarheid */
+    letter-spacing: -0.01em;   /* iets compacter, squeeze effect */
     background: white;
     color: #000;
     display: flex;
@@ -20,6 +20,7 @@ html, body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
 
 html {
     scroll-behavior: smooth;
