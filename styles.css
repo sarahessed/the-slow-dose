@@ -190,10 +190,10 @@ a:hover {
 /* Tekst selectie */
 ::selection {
     background: #ff00ff; /* dezelfde blauw als topbar */
-    color: white;        /* tekstkleur tijdens selectie */
+    color: black;        /* tekstkleur tijdens selectie */
 }
 
 ::-moz-selection {
     background: #ff00ff; /* voor Firefox */
-    color: white;
+    color: black;
 }
