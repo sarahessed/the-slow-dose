@@ -8,9 +8,9 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 18px;      /* zelfde body size */
-    line-height: 1.8;     /* ruime regelafstand */
-    letter-spacing: 0em;  /* geen extra spacing */
+    font-size: 18px;         /* body size */
+    line-height: 1.55;       /* compacter, zoals Pien Studios */
+    letter-spacing: 0em;     /* geen extra spacing */
     background: white;
     color: #000;
     display: flex;
