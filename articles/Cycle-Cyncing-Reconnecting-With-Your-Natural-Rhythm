@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0064fa">
+    <title>CYCLE SYNCING: RECONNECTING WITH YOUR NATURAL RHYTHM</title>
+    <meta name="description" content="A gentle, science-backed guide to understanding your menstrual cycle and supporting each phase with nutrition and awareness." />
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+    <div class="topbar"></div>
+
+    <div class="container left" id="top">
+
+        <div class="top-links">
+            <a href="/" class="home-link-inline">HOME</a>
+            <a href="/about.html" class="about-link-inline">ABOUT</a>
+        </div>
+
+        <h1>CYCLE SYNCING: RECONNECTING WITH YOUR NATURAL RHYTHM</h1>
+
+        <p>19-11-2025</p>
+
+        <!-- HEADER IMAGE -->
+        <img src="/images/IMG_3662 2.jpg" alt="cycle syncing image" class="header-image" />
+
+        <p>
+            Listening to your body is something many people struggle with, especially women.
+            For centuries, women lived according to the rhythms of their bodies. Today, however,
+            the pace of modern life—with its expectations of constant productivity—makes it harder
+            to tune in. You feel tired? You still have to get up and do what you are supposed to do.
+            In a fast-moving environment, it is easy to lose touch with our internal signals.
+        </p>
+
+        <p>
+            How do we reconnect? By understanding our natural cycle—and working with it rather
+            than against it. Below, we break down each phase of the menstrual cycle and offer
+            simple nutrition support to help you feel more aligned.
+        </p>
+
+        <!-- MENSTRUATION -->
+        <section>
+            <h2>MENSTRUATION (Day 1–5)</h2>
+
+            <p>
+                This phase is about rest, release and renewal. Energy often dips, cramps may appear,
+                and mood can shift.
+            </p>
+
+            <p><strong>To support this phase:</strong></p>
+            <ul>
+                <li>
+                    Focus on foods rich in <strong>iron</strong>, since blood loss can deplete iron stores
+                    and contribute to fatigue.
+                    <a href="https://www.longdom.org/open-access/the-impact-of-nutrition-on-menstrual-health-109464.html" target="_blank" rel="noopener">
+                        source
+                    </a>
+                </li>
+
+                <li>
+                    Foods rich in <strong>magnesium</strong> help relax the muscles and support mood.
+                    <a href="https://www.cambridge.org/core/journals/nutrition-research-reviews/article/nutritional-practices-to-manage-menstrual-cycle-related-symptoms-a-systematic-review/F28E2DC079C7DC2F1AC07A0EFCDE0DE1"
+                       target="_blank" rel="noopener">
+                        source
+                    </a>
+                </li>
+
+                <li>
+                    <strong>Omega-3 fatty acids</strong> may reduce pain and inflammation during this phase.
+                    <a href="https://www.longdom.org/open-access/the-impact-of-nutrition-on-menstrual-health-109464.html" target="_blank" rel="noopener">
+                        source
+                    </a>
+                </li>
+
+                <li>Warm, nourishing meals (soups, stews, porridges) bring comfort and support gentle digestion.</li>
+            </ul>
+
+            <p>
+                <strong>Seeds:</strong> flaxseeds and pumpkin seeds — often used in “seed cycling,” a holistic
+                nutrition approach that alternates seeds across the menstrual phases to support hormone balance.
+                Early studies suggest potential benefits but evidence remains limited.
+                <a href="https://www.thepharmajournal.com/archives/2023/vol12issue4/PartK/12-3-684-508.pdf" target="_blank" rel="noopener">
+                    source
+                </a>
+            </p>
+
+            <p>
+                <strong>Foods:</strong> beans, leafy greens, beets, nuts/seeds, cacao, whole grains,
+                proteins, omega-3 rich foods.
+            </p>
+        </section>
+
+        <!-- FOLLICULAR PHASE -->
+        <section>
+            <h2>FOLLICULAR PHASE (Day 6–13)</h2>
+
+            <p>
+                The body begins to prepare for ovulation. Energy and mood often rise; oestrogen levels steadily climb.
+            </p>
+
+            <ul>
+                <li>
+                    Foods rich in <strong>vitamin D</strong>, <strong>vitamin E</strong> and
+                    <strong>β-carotene</strong> support hormonal transition and provide antioxidant protection.
+                    <a href="https://www.longdom.org/open-access/the-impact-of-nutrition-on-menstrual-health-109464.html" target="_blank" rel="noopener">
+                        source
+                    </a>
+                </li>
+
+                <li>Fermented foods support gut health—and a healthy gut plays a key role in hormone balance.</li>
+            </ul>
+
+            <p><strong>Seeds:</strong> flaxseeds, pumpkin seeds</p>
+            <p>
+                <strong>Foods:</strong> egg yolk, mushrooms (vitamin D), almonds/avocado/olive oil (vitamin E),
+                carrots/paprika/pumpkin/spinach (β-carotene), fermented foods.
+            </p>
+        </section>
+
+        <!-- OVULATION -->
+        <section>
+            <h2>OVULATION (Day 14–16)</h2>
+
+            <p>This is the peak: highest energy, most sociable, the body at its most vibrant.</p>
+
+            <ul>
+                <li>
+                    Foods rich in <strong>vitamin B-complex</strong> and <strong>zinc</strong> support hormonal peaks.
+                </li>
+                <li>Sweet fruits like figs and berries bring antioxidants and gentle, natural sugars.</li>
+            </ul>
+
+            <p><strong>Seeds:</strong> flaxseeds, pumpkin seeds</p>
+            <p>
+                <strong>Foods:</strong> leafy greens, whole grains, eggs, fish, pumpkin seeds/nuts,
+                figs, berries, coconut water.
+            </p>
+        </section>
+
+        <!-- LUTEAL PHASE -->
+        <section>
+            <h2>LUTEAL PHASE (Day 17–28)</h2>
+
+            <p>
+                The body prepares for pregnancy or the next menstruation. Many women notice fluctuations
+                in mood, energy, and digestion.
+            </p>
+
+            <ul>
+                <li>Complex carbohydrates help stabilise blood sugar and support steadier energy.</li>
+                <li>Protein helps maintain muscle, satiety, and balanced blood sugar.</li>
+                <li>
+                    Cruciferous vegetables support oestrogen metabolism (for example via the liver).
+                    <a href="https://aacrjournals.org/cebp/article/9/8/773/179852/Brassica-Vegetable-Consumption-Shifts-Estrogen"
+                       target="_blank" rel="noopener">
+                        source
+                    </a>
+                </li>
+            </ul>
+
+            <p><strong>Seeds:</strong> sesame seeds, sunflower seeds</p>
+            <p>
+                <strong>Foods:</strong> sweet potato, protein sources, broccoli, cauliflower, sprouts,
+                rucola, kale, warming dishes.
+            </p>
+        </section>
+
+        <!-- BOTTOM LINE -->
+        <h1>BOTTOM LINE</h1>
+
+        <p>
+            Cycle syncing invites you to move through your month with more softness and awareness.
+            It gently shifts the question from “How can I push through?” to “What does my body need right now?”
+        </p>
+
+        <p>
+            You may notice that some phases invite more movement and connection, while others call for rest,
+            grounding foods, and slower mornings. None of this is about strict rules; it is about recognising
+            patterns and responding with kindness.
+        </p>
+
+        <p>
+            Let your cycle be a rhythm you live with—not something you fight against.
+            A quiet guide, month after month, reminding you of your own natural balance.
+        </p>
+
+        <div class="top-button">
+            <a href="#top" class="top-link">TOP</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-left">2025</div>
+        <div class="footer-right">
+            inbox: <a href="mailto:theslowdose@gmail.com">theslowdose@gmail.com</a><br/>
+            updates: <a href="https://www.instagram.com/theslowdose" target="_blank" rel="noopener">@theslowdose</a>
+        </div>
+    </footer>
+</body>
+</html>
