@@ -321,12 +321,6 @@ footer a{
   }
 }
 
-/* REMOVE play/pause icon on mobile only */
-@media (max-width: 600px){
-  #sound-icon{
-    display: none;
-  }
-}
 /* Desktop: move homepage images slightly down */
 @media (min-width: 900px){
   .homepage-sequence{
