@@ -176,6 +176,19 @@ a {
 }
 
 /* =========================
+   ARTICLE TEXT – CENTERED COLUMN
+========================= */
+.container.left{
+  max-width: 640px;        
+  margin: 0 auto;        
+  padding: 0 20px 40px;
+
+  text-align: center;      
+  line-height: 1.65;
+}
+
+
+/* =========================
    SOUND CONTROL
 ========================= */
 .sound-control {
