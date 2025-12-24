@@ -5,12 +5,13 @@
 }
 
 @font-face {
-    font-family: "Neue Haas Display";
-    src: url("/fonts/NeueHaasDisplayBlack.ttf") format("truetype");
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Neue Haas Display";
+  src: url("fonts/NeueHaasDisplayBlack.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
 }
+
 
 
 html, body {
@@ -98,8 +99,10 @@ html {
 }
 
 h1, h2, h3, h4 {
-    font-family: "Neue Haas Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 900;
+  font-family: "Neue Haas Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 900;
+}
+
 
 h1 {
     font-size: 40px;
