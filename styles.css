@@ -53,7 +53,7 @@ html, body {
   margin: 0;
   padding: 0;
   background: #F4E7C6;
-  color: #1B3662;
+  color: #fff;
 
   display: flex;
   flex-direction: column;
@@ -124,12 +124,12 @@ h4 {
    LINKS
 ========================= */
 a {
-  color: #000;
+  color: #fff;
   text-decoration: underline;
 }
 
 a:hover {
-  color: #000;
+  color: #fff;
 }
 
 /* =========================
@@ -142,7 +142,7 @@ a:hover {
   font-size: 1rem;
   font-weight: 400;
   text-decoration: underline;
-  color: #000;
+  color: #fff;
   letter-spacing: 0;
 }
 
@@ -259,7 +259,7 @@ ul li {
 ========================= */
 footer {
   background: #D20200;
-  color: #000;
+  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
