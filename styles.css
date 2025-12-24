@@ -13,6 +13,18 @@
 }
 
 
+body {
+  font-family: "Neue Haas Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+}
+
+h1, h2, h3 {
+  font-family: "Neue Haas Display", sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
 
 html, body {
     margin: 0;
@@ -96,15 +108,6 @@ html {
     color: black;
     font-size: 1rem;
     font-weight: normal;
-}
-
-h1, h2, h3, h4 {
-  font-family: "Neue Haas Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 900;
-}
-
-h1, h2, h3, h4 {
-  letter-spacing: 0.02em;
 }
 
 h1 {
