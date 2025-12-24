@@ -49,30 +49,17 @@
    RESET / LAYOUT
 ========================= */
 html {
-  background: #F6BDC8; /* overscroll kleur (roze) */
+  background: #F6BDC8; /* overscroll / “achterkant” */
 }
 
 body {
-  background: #F4E7C6; /* pagina kleur (beige) */
+  background: #F4E7C6; /* pagina */
 }
 
 html, body {
   margin: 0;
   padding: 0;
   color: #000;
-
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  overflow-y: scroll;
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 
   display: flex;
   flex-direction: column;
