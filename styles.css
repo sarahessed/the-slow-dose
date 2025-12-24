@@ -159,10 +159,10 @@ a:hover {
 .logo{
   font-family: var(--font-heading);
   font-weight: 400;
-  font-size: 22px;
+  font-size: 64px;
   letter-spacing: 0.04em;
   text-decoration: none;
-  color: #000;
+  color: #fff;
   text-transform: uppercase;
 }
 
