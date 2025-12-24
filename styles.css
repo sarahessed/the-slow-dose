@@ -2,14 +2,15 @@
    TOPBAR (HOME ONLY)
 ========================= */
 .topbar{
+  background: transparent;
   height: var(--topbar-height);
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
-  background: transparent;
 }
+
 
 :root{
   --topbar-height: 28px; /* was 20px */
@@ -116,6 +117,10 @@ a:active{
   background: transparent; /* home is transparent */
 }
 
+body.home .site-header{
+  top: 0;
+}
+
 .nav-inner{
   max-width: 1000px;
   height: 100%;
@@ -179,6 +184,9 @@ a:active{
   padding: calc(var(--topbar-height) + var(--header-height) + 40px)
            var(--page-padding-x)
            var(--page-padding-bottom);
+}
+body.home .container{
+  padding-top: calc(var(--header-height) + 40px);
 }
 
 /* Article text column */
