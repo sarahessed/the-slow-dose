@@ -134,115 +134,131 @@
     }
   }
 </script>
-
-<!-- NEW: scatter script -->
 <script>
-  function rectsOverlap(a, b, pad) {
-    return !(
-      a.right + pad < b.left ||
-      a.left > b.right + pad ||
-      a.bottom + pad < b.top ||
-      a.top > b.bottom + pad
-    );
-  }
-
-  function layoutScatter() {
+  function layoutScatterFixed() {
     const container = document.getElementById("scatter");
     if (!container) return;
 
     const tiles = Array.from(container.querySelectorAll(".tile"));
-    const placed = [];
+    const W = container.clientWidth;
+    const isMobile = window.matchMedia("(max-width: 700px)").matches;
+
+    // ruimte + maten
+    const sideMargin = isMobile ? 10 : 22;
+    const gap = isMobile ? 12 : 26;
+
+    // widths per type
+    const bigW = isMobile ? Math.min(W - sideMargin * 2, 420) : 520;
+    const smallW = isMobile ? Math.min((W - sideMargin * 2 - gap), 420) : 420;
+
+    // vertical rhythm (ruimte tussen rijen)
+    const rowGap = isMobile ? 26 : 40;
+
+    // helper: center x for a given tile width
+    const centerX = (tileW) => Math.max(sideMargin, (W - tileW) / 2);
+
+    // helper: two columns x positions (left/right)
+    const leftX = (tileW) => sideMargin;
+    const rightX = (tileW) => Math.max(sideMargin, W - sideMargin - tileW);
 
     // reset
     tiles.forEach(t => {
+      t.style.position = "absolute";
       t.style.left = "0px";
       t.style.top = "0px";
-      t.style.width = "";
-      t.style.position = "absolute";
       t.style.visibility = "hidden";
+      t.style.width = "";
     });
 
-    const containerWidth = container.clientWidth;
-    const isMobile = window.matchMedia("(max-width: 700px)").matches;
-
-    const minW = isMobile ? Math.min(220, containerWidth - 24) : 240;
-    const maxW = isMobile ? Math.min(320, containerWidth - 24) : 460;
-
-    const pad = isMobile ? 10 : 18;
-    const margin = isMobile ? 10 : 22;
-
-    // start height guess
+    // pattern: 1,2,1,2,...
+    let y = 0;
+    let i = 0;
+    const containerTop = container.getBoundingClientRect().top;
     let maxBottom = 0;
 
-    // make sure images are loaded-ish (use current natural ratio)
-    tiles.forEach((tile, idx) => {
-      const w = Math.max(minW, Math.min(maxW, minW + Math.random() * (maxW - minW)));
-      tile.style.width = w + "px";
+    const placeOneCentered = (tile, width) => {
+      tile.style.width = width + "px";
+      tile.style.left = centerX(width) + "px";
+      tile.style.top = y + "px";
       tile.style.visibility = "visible";
 
-      // estimate height after width set
       const r = tile.getBoundingClientRect();
-      const tileW = r.width;
+      const h = r.height;
 
-      // try random placements
-      let placedRect = null;
-      const attempts = isMobile ? 80 : 220;
+      y += h + rowGap;
+      maxBottom = Math.max(maxBottom, (r.bottom - containerTop));
+    };
 
-      for (let i = 0; i < attempts; i++) {
-        const x = margin + Math.random() * Math.max(0, (containerWidth - tileW - margin * 2));
-        const y = margin + Math.random() * Math.max(0, 1400); // playfield height
+    const placeTwo = (tileA, tileB, width) => {
+      // beide dezelfde width
+      tileA.style.width = width + "px";
+      tileB.style.width = width + "px";
 
-        tile.style.left = x + "px";
-        tile.style.top = y + "px";
+      tileA.style.left = leftX(width) + "px";
+      tileB.style.left = rightX(width) + "px";
 
-        const rr = tile.getBoundingClientRect();
-        const rect = { left: rr.left, top: rr.top, right: rr.right, bottom: rr.bottom };
+      tileA.style.top = y + "px";
+      tileB.style.top = y + "px";
 
-        let ok = true;
-        for (const p of placed) {
-          if (rectsOverlap(rect, p, pad)) { ok = false; break; }
-        }
-        if (ok) { placedRect = rect; break; }
+      tileA.style.visibility = "visible";
+      tileB.style.visibility = "visible";
+
+      const rA = tileA.getBoundingClientRect();
+      const rB = tileB.getBoundingClientRect();
+      const h = Math.max(rA.height, rB.height);
+
+      y += h + rowGap;
+      maxBottom = Math.max(maxBottom, (Math.max(rA.bottom, rB.bottom) - containerTop));
+    };
+
+    while (i < tiles.length) {
+      // 1 in het midden
+      const t1 = tiles[i];
+      placeOneCentered(t1, t1.dataset.size === "small" ? smallW : bigW);
+      i++;
+
+      if (i >= tiles.length) break;
+
+      // 2 naast elkaar
+      const t2 = tiles[i];
+      const t3 = tiles[i + 1];
+
+      if (!t3) {
+        // als er oneven aantal is: laatste weer centered
+        placeOneCentered(t2, t2.dataset.size === "small" ? smallW : bigW);
+        i++;
+        break;
       }
 
-      // fallback: stack downward if random failed
-      if (!placedRect) {
-        const x = margin;
-        const y = maxBottom + margin;
-        tile.style.left = x + "px";
-        tile.style.top = y + "px";
-        const rr = tile.getBoundingClientRect();
-        placedRect = { left: rr.left, top: rr.top, right: rr.right, bottom: rr.bottom };
-      }
+      placeTwo(t2, t3, smallW);
+      i += 2;
+    }
 
-      placed.push(placedRect);
-      maxBottom = Math.max(maxBottom, placedRect.bottom - container.getBoundingClientRect().top);
-    });
-
-    // set container height so footer doesn't overlap
+    // zet container hoogte zodat footer niet eroverheen klapt
     container.style.height = (maxBottom + (isMobile ? 40 : 80)) + "px";
   }
 
-  // layout on load + when images load + resize
-  window.addEventListener("load", layoutScatter);
+  // run on load + resize
+  window.addEventListener("load", layoutScatterFixed);
   window.addEventListener("resize", () => {
     clearTimeout(window.__scatterT);
-    window.__scatterT = setTimeout(layoutScatter, 150);
+    window.__scatterT = setTimeout(layoutScatterFixed, 120);
   });
 
-  // if images load later, relayout once
+  // re-run when images load (1x)
   document.addEventListener("DOMContentLoaded", () => {
     const imgs = document.querySelectorAll("#scatter img");
-    let fired = false;
+    let done = false;
     imgs.forEach(img => {
       img.addEventListener("load", () => {
-        if (fired) return;
-        fired = true;
-        setTimeout(layoutScatter, 50);
+        if (done) return;
+        done = true;
+        setTimeout(layoutScatterFixed, 50);
       });
     });
   });
 </script>
+
 
 </body>
 </html>
