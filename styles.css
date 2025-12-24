@@ -426,5 +426,5 @@ body.about .nav-link{
    ABOUT PAGE: extra pink space before footer
 ========================= */
 .about-spacer{
-  height: 800px; /* adjust if you want more/less */
+  height: 600px; /* adjust if you want more/less */
 }
