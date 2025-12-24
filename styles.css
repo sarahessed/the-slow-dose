@@ -2,13 +2,17 @@
    TOPBAR (HOME ONLY)
 ========================= */
 .topbar{
-  background: #transparant;
-  height: 20px;
+  height: var(--topbar-height);
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
+  background: transparent;
+}
+
+body.home .site-header{
+  top: var(--topbar-height);
 }
 
 /* =========================
