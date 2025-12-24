@@ -235,10 +235,16 @@ const smallW = Math.min(420, Math.floor((available - gap) / 2));
         break;
       }
 
-      placeTwo(t2, t3, smallW);
-      i += 2;
-    }
-
+    if (canDoTwoUp) {
+  // vaste grootte naast elkaar
+  placeTwo(t2, t3, smallW_DESIGN);
+  i += 2;
+} else {
+  // te smal -> onder elkaar, maar zelfde grootte
+  placeOneCentered(t2, smallW);
+  placeOneCentered(t3, smallW);
+  i += 2;
+}
     // zet container hoogte zodat footer niet eroverheen klapt
     container.style.height = (maxBottom + (isMobile ? 40 : 80)) + "px";
   }
