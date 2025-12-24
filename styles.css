@@ -29,13 +29,16 @@
   --font-body: Helvetica, Arial, sans-serif;
   --font-heading: "Neue Haas Display", Helvetica, Arial, sans-serif;
 
-  --lh-body: 1.45;
+  --lh-body: 1.55;              /* slightly more readable */
   --lh-heading: 1.2;
 
   --page-padding-x: 20px;
   --page-padding-bottom: 20px;
 
   --title-offset: 80px;
+
+  --body-size: 19px;            /* NORMAL TEXT BIGGER (desktop) */
+  --body-size-mobile: 20px;     /* NORMAL TEXT BIGGER (mobile) */
 }
 
 /* =========================
@@ -63,7 +66,7 @@ html, body {
 ========================= */
 body {
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: var(--body-size);
   line-height: var(--lh-body);
 }
 
@@ -128,7 +131,7 @@ a {
 /* LOGO — responsive + single line */
 .logo{
   font-family: var(--font-heading);
-  font-size: clamp(24px, 4.8vw, 64px); /* net iets kleiner op mobiel */
+  font-size: clamp(22px, 4.6vw, 64px);  /* a touch smaller on mobile */
   letter-spacing: 0.04em;
   color: #fff;
   text-transform: uppercase;
@@ -176,17 +179,21 @@ a {
 }
 
 /* =========================
-   ARTICLE TEXT – CENTERED COLUMN
+   ARTICLE TEXT COLUMN (LEFT, WIDER)
+   Use: <div class="container left"> on article pages
 ========================= */
 .container.left{
-  max-width: 640px;        
-  margin: 0 auto;        
-  padding: 0 20px 40px;
-
-  text-align: center;      
-  line-height: 1.65;
+  max-width: 820px;         /* WIDER (was too narrow) */
+  margin: 0 auto;
+  padding: 120px var(--page-padding-x) 60px; /* keeps header spacing + bottom */
+  text-align: left;         /* LEFT (as requested) */
+  line-height: 1.75;        /* very readable */
 }
 
+/* make paragraphs breathe a bit */
+.container.left p{
+  margin: 0 0 1.25em 0;
+}
 
 /* =========================
    SOUND CONTROL
@@ -216,25 +223,20 @@ a {
 /* ✅ Mobile Safari: replace emoji with real icon (SVG mask) */
 @media (max-width: 600px){
 
-  /* hide the text glyph (▶ / ❚❚) but keep the element for JS */
+  /* keep #sound-icon as a real icon box */
   #sound-icon{
     width: 16px;
     height: 16px;
     display: inline-block;
-    font-size: 0;            /* hides emoji/text */
+    font-size: 0;           /* hides emoji/text */
     line-height: 0;
-  }
-
-  /* draw PLAY icon by default */
-  #sound-icon{
     background: #fff;
 
     -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M5 3.2v9.6L13 8 5 3.2z'/%3E%3C/svg%3E") no-repeat center / contain;
             mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M5 3.2v9.6L13 8 5 3.2z'/%3E%3C/svg%3E") no-repeat center / contain;
   }
 
-  /* when JS sets icon text to ❚❚ we also set aria state via a class on the link (see note below) */
-  /* If you DO NOT want to change JS, we can also use a workaround: always show play on mobile. */
+  /* Pause when playing */
   #sound-link.is-playing #sound-icon{
     -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M4 3h3v10H4V3zm5 0h3v10H9V3z'/%3E%3C/svg%3E") no-repeat center / contain;
             mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M4 3h3v10H4V3zm5 0h3v10H9V3z'/%3E%3C/svg%3E") no-repeat center / contain;
@@ -269,6 +271,13 @@ a {
 
 .homepage-sequence a:hover img{
   transform: scale(1.03);
+}
+
+/* Desktop: move homepage images slightly down */
+@media (min-width: 900px){
+  .homepage-sequence{
+    margin-top: 60px;
+  }
 }
 
 /* =========================
@@ -314,16 +323,24 @@ footer a{
 ========================= */
 @media (max-width: 600px){
   body{
-    font-size: 20px;
+    font-size: var(--body-size-mobile);
   }
 
   .logo{
-    font-size: 26px;          /* kleiner op mobiel */
+    font-size: 24px;          /* slightly smaller on mobile */
     letter-spacing: 0.03em;
   }
 
   .nav-link{
-    font-size: 20px;          /* about kleiner op mobiel */
+    font-size: 16px;          /* about smaller on mobile */
+  }
+
+  /* Article column on mobile */
+  .container.left{
+    max-width: 100%;
+    padding: 110px 16px 40px;
+    text-align: left;
+    line-height: 1.7;
   }
 
   /* images: full width on mobile */
@@ -359,13 +376,6 @@ footer a{
 
   :root {
     --title-offset: 40px;
-  }
-}
-
-/* Desktop: move homepage images slightly down */
-@media (min-width: 900px){
-  .homepage-sequence{
-    margin-top: 60px;
   }
 }
 
