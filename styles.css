@@ -352,6 +352,21 @@ footer{
 /* =========================
    MEDIA QUERIES
 ========================= */
+
+@media (max-width: 600px){
+  body{
+    font-size: 20px;      /* was 18px */
+  }
+
+  .nav-link{
+    font-size: 18px;      /* groter op mobiel */
+  }
+
+  /* als je h3/h4 ergens anders gebruikt (artikelen) ook iets groter */
+  h1{ font-size: 34px; }
+  h2{ font-size: 1.35rem; }
+}
+
 @media (max-width: 900px) {
   .sound-control {
     position: relative;
@@ -387,15 +402,6 @@ footer{
   .nav-inner{
     padding: 14px var(--page-padding-x);
   }
-
-  .logo{
-    font-size: 20px;
-  }
-
-  .nav-link{
-    font-size: 16px;
-  }
-}
 
 /* =========================
    TEXT SELECTION
