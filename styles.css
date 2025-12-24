@@ -52,7 +52,7 @@ html, body {
   margin: 0;
   padding: 0;
   background: #F4E7C6;
-  color: #fff;
+  color: #000;
 
   display: flex;
   flex-direction: column;
