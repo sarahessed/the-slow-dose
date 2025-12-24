@@ -46,16 +46,23 @@
 }
 
 /* =========================
-   RESET / LAYOUT
+   RESET / LAYOUT  (FIXED)
 ========================= */
+
+/* 1) Roze achter de pagina (overscroll / rubber band) */
 html {
-  background: #F6BDC8; /* overscroll / “achterkant” */
+  background: #F6BDC8;
+  height: 100%;
 }
 
+/* 2) Beige pagina zelf */
 body {
-  background: #F4E7C6; /* pagina */
+  background: #F4E7C6;
+  min-height: 100vh;
+  overflow-y: auto; /* beter dan scroll */
 }
 
+/* 3) Algemene resets */
 html, body {
   margin: 0;
   padding: 0;
@@ -63,11 +70,9 @@ html, body {
 
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 
   box-sizing: border-box;
   scroll-behavior: smooth;
-  overflow-y: scroll;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -75,6 +80,15 @@ html, body {
 
 *, *::before, *::after {
   box-sizing: inherit;
+}
+
+/* 4) Extra “force” laag voor desktop Safari/Chrome overscroll */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: #F6BDC8;   /* roze overscroll */
+  z-index: -1;
 }
 
 /* =========================
