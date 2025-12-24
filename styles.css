@@ -174,9 +174,11 @@ a:hover {
   font-family: var(--font-body);
   font-size: 18px;
   font-weight: 400;
-  text-decoration: underline;
-  color: #000;
+
+  text-decoration: none;   /* geen streep */
+  color: #ffffff;          /* wit */
   letter-spacing: 0;
+  text-transform: lowercase;
 }
 
 /* =========================
