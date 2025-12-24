@@ -250,22 +250,30 @@ ul li {
   display: block;
 }
 
-/* =========================
-   FOOTER
-========================= */
-footer {
-  background: #D20200;
-  color: #000;
+footer{
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 16px;
 
-  padding: 80px 40px;  
-  font-size: 22px;      
-  line-height: 1.3;
-
+  padding: 18px 20px;
   width: 100%;
   box-sizing: border-box;
+
+  /* voorkomt “door elkaar” op iPhone */
+  flex-wrap: nowrap;
+}
+
+.footer-left{
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.footer-right{
+  flex: 0 0 auto;
+  text-align: right;
+  white-space: nowrap;          /* zet dit op normal als je liever wrapt */
+  line-height: 1.3;
 }
 
 
