@@ -112,7 +112,7 @@ footer {
 footer a {
   color: #fff;
 }
-
+/* ========================= BASE VARIABLES ========================= */ :root { --font-body: Helvetica, Arial, sans-serif; --font-heading: "Neue Haas Display", Helvetica, Arial, sans-serif; --weight-body: 400; --weight-heading: 400; --lh-body: 1.45; --lh-heading: 1.2; --tracking-body: 0em; --tracking-heading: 0em; /* PAGE SPACING */ --page-padding-x: 20px; --page-padding-bottom: 20px; /* MOVE TITLE DOWN (adjust this) */ --title-offset: 80px; /* ↑ zet hoger/lager: 40px, 100px, etc. */ }
 /* =========================
    MOBILE
 ========================= */
