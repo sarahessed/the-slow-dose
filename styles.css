@@ -281,3 +281,96 @@ body.article .nav-link{
   color: #000;
 }
 
+/* =========================
+   FIXED HEADER AS REAL BLOCK
+   (prevents content showing "above" header when scrolling)
+========================= */
+.site-header{
+  position: fixed;
+  left: 0;
+  top: 0;                 /* header owns the very top */
+  width: 100%;
+  z-index: 9998;
+}
+
+/* keep your topbar visually on top if you use it on home */
+.topbar{
+  z-index: 9999;
+}
+
+/* header height + spacing token */
+:root{
+  --header-height: 88px;  /* adjust if you want */
+  --topbar-height: 20px;
+}
+
+/* nav area has a fixed height so it becomes a "solid block" */
+.nav-inner{
+  min-height: var(--header-height);
+  display: grid;
+  align-items: center;
+}
+
+/* push page content BELOW the header block */
+.container{
+  padding-top: calc(var(--header-height) + var(--topbar-height) + 20px);
+}
+
+/* On pages where topbar is hidden (article/about), we reduce spacing */
+body.article .container,
+body.about .container{
+  padding-top: calc(var(--header-height) + 24px);
+}
+
+/* =========================
+   ABOUT PAGE THEME
+========================= */
+body.about{
+  background: #F6BDC8;
+  color: #fff;
+}
+
+/* hide topbar on about */
+body.about .topbar{
+  display: none;
+}
+
+/* header background = solid pink block */
+body.about .site-header{
+  background: #F6BDC8;
+}
+
+/* logo + about link white */
+body.about .logo,
+body.about .nav-link{
+  color: #fff;
+}
+
+/* clickable = red on hover/focus/active */
+body.about a:hover,
+body.about a:focus,
+body.about a:active{
+  color: #D20200;
+}
+
+/* ensure logo never underlined */
+.logo,
+.logo:link,
+.logo:visited,
+.logo:hover,
+.logo:focus,
+.logo:active{
+  text-decoration: none !important;
+}
+
+/* About page body links: look like text (still clickable) */
+body.about .container a{
+  text-decoration: none;
+}
+
+/* Footer on about: keep it readable (still red block) */
+body.about footer{
+  color: #000;            /* optional: keeps footer readable on red */
+}
+
+
