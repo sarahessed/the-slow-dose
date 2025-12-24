@@ -1,276 +1,142 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Slow Dose – A journal on nutrition, health, and slowing down</title>
-    <meta name="description" content="The Slow Dose: A journal on nutrition, health, and slowing down." />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="The Slow Dose" />
-    <link rel="canonical" href="https://www.theslowdose.com/" />
-    
-    <!-- Favicon voor browsers -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png">
-    <link rel="shortcut icon" href="/icons/favicon.ico">
-
-    <!-- Apple Touch Icons -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
-    <link rel="apple-touch-icon-precomposed" href="/icons/apple-icon-precomposed.png">
-    <link rel="apple-touch-icon" href="/icons/apple-icon.png">
-
-    <!-- Android Icons -->
-    <link rel="icon" type="image/png" sizes="36x36" href="/icons/android-icon-36x36.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="/icons/android-icon-48x48.png">
-    <link rel="icon" type="image/png" sizes="72x72" href="/icons/android-icon-72x72.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/icons/android-icon-96x96.png">
-    <link rel="icon" type="image/png" sizes="144x144" href="/icons/android-icon-144x144.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/icons/android-icon-192x192.png">
-
-    <!-- Windows tiles -->
-    <meta name="msapplication-TileColor" content="#0064fa">
-    <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png">
-    <meta name="msapplication-square70x70logo" content="/icons/ms-icon-70x70.png">
-    <meta name="msapplication-square150x150logo" content="/icons/ms-icon-150x150.png">
-    <meta name="msapplication-square310x310logo" content="/icons/ms-icon-310x310.png">
-
-    <meta name="theme-color" content="#0064fa" />
-    <link rel="stylesheet" href="/styles.css" />
-</head>
-    
-<body>
-    <div class="topbar"></div>
-
- <!-- ... alles hierboven blijft hetzelfde ... -->
-
-<div class="container">
-  <div class="sound-control">
-    <a href="javascript:void(0);" onclick="toggleSound()" id="sound-link">
-      <span id="sound-icon">▶</span> <span id="sound-text">Play soothing sounds</span>
-    </a>
-    <audio id="soothing-audio" loop>
-      <source src="/sounds/noise-of-birds-on-the-watercourse-206341.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-  </div>
-
-  <h3>THE SLOW DOSE</h3>
-  <h4>a journal on nutrition, health, and slowing down.</h4>
-
-  <!-- NEW: scatter container -->
-  <div class="scatter" id="scatter">
-    <a class="tile" href="/articles/Cycle-Cyncing.html">
-      <img src="/images/IMG_3662 2.jpg" alt="Cycle syncing">
-    </a>
-
-    <a class="tile" href="/articles/Gelatin-gummies.html">
-      <img src="/images/IMG_2946.JPG" alt="Gelatin gummies">
-    </a>
-
-    <a class="tile" href="/articles/Wellness-trends.html">
-      <img src="/images/IMG_2799.jpg" alt="Wellness trends">
-    </a>
-
-    <a class="tile" href="/articles/Miso-soup.html">
-      <img src="/images/IMG_2723.jpg" alt="Miso soup">
-    </a>
-
-    <a class="tile" href="/articles/The-omega-story.html">
-      <img src="/images/IMG_2613.jpg" alt="Omega story">
-    </a>
-
-    <a class="tile" href="/articles/Should-I-buy-this-organic.html">
-      <img src="/images/IMG_2334.jpg" alt="Should I buy this organic">
-    </a>
-
-    <a class="tile" href="/articles/Skincare-less-is-more.html">
-      <img src="/images/IMG_2330.JPG" alt="Skincare less is more">
-    </a>
-
-    <a class="tile" href="/articles/The-morning-lineup-nourishing-food-to-start-your-day.html">
-      <img src="/images/IMG_2232 2.jpg" alt="Morning lineup">
-    </a>
-
-    <a class="tile" href="/articles/The-confusing-world-of-dental-care.html">
-      <img src="/images/IMG_2242.JPG" alt="Dental care">
-    </a>
-  </div>
-</div>
-
-<footer>
-  <div class="footer-left">2025</div>
-  <div class="footer-right">
-    inbox: <a href="mailto:theslowdose@gmail.com">theslowdose@gmail.com</a><br/>
-    updates: <a href="https://www.instagram.com/theslowdose" target="_blank" rel="noopener">@theslowdose</a>
-  </div>
-</footer>
-
-<script>
-  function toggleSound() {
-    var audio = document.getElementById("soothing-audio");
-    var icon = document.getElementById("sound-icon");
-    var text = document.getElementById("sound-text");
-    if (audio.paused) {
-      audio.play();
-      icon.textContent = "❚❚";
-      text.textContent = "Pause";
-    } else {
-      audio.pause();
-      icon.textContent = "▶";
-      text.textContent = "Play soothing sounds";
-    }
-  }
-</script>
-<script>
-  function layoutScatterFixed() {
-    const container = document.getElementById("scatter");
-    if (!container) return;
-
-    const tiles = Array.from(container.querySelectorAll(".tile"));
-    const W = container.clientWidth;
-    const isMobile = window.matchMedia("(max-width: 700px)").matches;
-
-    // ruimte + maten
-    const sideMargin = isMobile ? 10 : 22;
-    const gap = isMobile ? 12 : 26;
-
-    // widths per type
- const available = W - sideMargin * 2;
-
-// big: max 520, maar nooit breder dan container
-const bigW = Math.min(520, available);
-
-// two-up: (available - gap) / 2, met max 420
-const smallW = Math.min(420, Math.floor((available - gap) / 2));
-
-    // vertical rhythm (ruimte tussen rijen)
-    const rowGap = isMobile ? 26 : 40;
-
-    // helper: center x for a given tile width
-    const centerX = (tileW) => Math.max(sideMargin, (W - tileW) / 2);
-
-    // helper: two columns x positions (left/right)
-    const leftX = (tileW) => sideMargin;
-    const rightX = (tileW) => Math.max(sideMargin, W - sideMargin - tileW);
-
-    // reset
-    tiles.forEach(t => {
-      t.style.position = "absolute";
-      t.style.left = "0px";
-      t.style.top = "0px";
-      t.style.visibility = "hidden";
-      t.style.width = "";
-    });
-
-    // pattern: 1,2,1,2,...
-    let y = 0;
-    let i = 0;
-    const containerTop = container.getBoundingClientRect().top;
-    let maxBottom = 0;
-
-    const placeOneCentered = (tile, width) => {
-      tile.style.width = width + "px";
-      tile.style.left = centerX(width) + "px";
-      tile.style.top = y + "px";
-      tile.style.visibility = "visible";
-
-      const r = tile.getBoundingClientRect();
-      const h = r.height;
-
-      y += h + rowGap;
-      maxBottom = Math.max(maxBottom, (r.bottom - containerTop));
-    };
-
-    const placeTwo = (tileA, tileB, width) => {
-      // beide dezelfde width
-      tileA.style.width = width + "px";
-      tileB.style.width = width + "px";
-
-      tileA.style.left = leftX(width) + "px";
-      tileB.style.left = rightX(width) + "px";
-
-      tileA.style.top = y + "px";
-      tileB.style.top = y + "px";
-
-      tileA.style.visibility = "visible";
-      tileB.style.visibility = "visible";
-
-      const rA = tileA.getBoundingClientRect();
-      const rB = tileB.getBoundingClientRect();
-      const h = Math.max(rA.height, rB.height);
-
-      y += h + rowGap;
-      maxBottom = Math.max(maxBottom, (Math.max(rA.bottom, rB.bottom) - containerTop));
-    };
-
-    while (i < tiles.length) {
-      // 1 in het midden
-      const t1 = tiles[i];
-      placeOneCentered(t1, t1.dataset.size === "small" ? smallW : bigW);
-      i++;
-
-      if (i >= tiles.length) break;
-
-      // 2 naast elkaar
-      const t2 = tiles[i];
-      const t3 = tiles[i + 1];
-
-      if (!t3) {
-        // als er oneven aantal is: laatste weer centered
-        placeOneCentered(t2, t2.dataset.size === "small" ? smallW : bigW);
-        i++;
-        break;
-      }
-
-    if (canDoTwoUp) {
-  // vaste grootte naast elkaar
-  placeTwo(t2, t3, smallW_DESIGN);
-  i += 2;
-} else {
-  // te smal -> onder elkaar, maar zelfde grootte
-  placeOneCentered(t2, smallW);
-  placeOneCentered(t3, smallW);
-  i += 2;
+/* =========================
+   RESET
+========================= */
+* {
+  box-sizing: border-box;
 }
-    // zet container hoogte zodat footer niet eroverheen klapt
-    container.style.height = (maxBottom + (isMobile ? 40 : 80)) + "px";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  background: #fff;
+  color: #000;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+.topbar {
+  background: #0064fa;
+  height: 20px;
+  width: 100%;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+  position: relative;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h3 {
+  font-size: 60px;
+  text-align: center;
+  margin: 80px 0 10px;
+}
+
+h4 {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* =========================
+   SOUND CONTROL
+========================= */
+.sound-control {
+  position: absolute;
+  top: 35px;
+  left: -150px;
+}
+
+.sound-control a {
+  text-decoration: underline;
+  color: #000;
+  font-size: 14px;
+}
+
+/* =========================
+   SHOPIFY STYLE SEQUENCE
+========================= */
+.homepage-sequence {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15rem;
+}
+
+/* widths */
+.img-group-small { width: 30%; }
+.img-group-big   { width: 45%; }
+.img-group-double{ width: 80%; }
+
+/* images */
+.homepage-sequence img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.homepage-sequence a:hover img {
+  transform: scale(1.03);
+}
+
+/* double images */
+.double-img {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+  align-items: center;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background: #39FF14;
+  color: #fff;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+footer a {
+  color: #fff;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 790px) {
+  .img-group-small { width: 70%; }
+  .img-group-big,
+  .img-group-double { width: 100%; }
+
+  .double-img {
+    gap: 20px;
   }
 
-  // run on load + resize
-  window.addEventListener("load", layoutScatterFixed);
-  window.addEventListener("resize", () => {
-    clearTimeout(window.__scatterT);
-    window.__scatterT = setTimeout(layoutScatterFixed, 120);
-  });
+  .homepage-sequence {
+    gap: 7rem;
+  }
 
-  // re-run when images load (1x)
-  document.addEventListener("DOMContentLoaded", () => {
-    const imgs = document.querySelectorAll("#scatter img");
-    let done = false;
-    imgs.forEach(img => {
-      img.addEventListener("load", () => {
-        if (done) return;
-        done = true;
-        setTimeout(layoutScatterFixed, 50);
-      });
-    });
-  });
-</script>
+  .sound-control {
+    position: relative;
+    left: 0;
+    top: 0;
+    margin-bottom: 20px;
+  }
 
-
-</body>
-</html>
-
+  h3 {
+    margin-top: 30px;
+  }
+}
