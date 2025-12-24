@@ -11,8 +11,8 @@
   background: transparent;
 }
 
-body.home .site-header{
-  top: var(--topbar-height);
+:root{
+  --topbar-height: 28px; /* was 20px */
 }
 
 /* =========================
