@@ -406,11 +406,48 @@ body.article .topbar{
   display: none;
 }
 
+/* ARTICLE HEADER BACKGROUND */
+body.article .site-header{
+  background: #C1C1CB;
+}
+
 /* logo + about zwart op artikelen */
 body.article .logo,
 body.article .nav-link{
   color: #000;
 }
+
+.logo:hover,
+.logo:focus{
+  text-decoration: none;
+}
+
+.top-link{
+  text-transform: lowercase;
+  text-decoration: none;
+  color: inherit;
+}
+
+.top-link:hover,
+.top-link:focus,
+.top-link:active{
+  color: #D20200;
+}
+
+/* GLOBAL INTERACTIVE HOVER */
+a:hover,
+a:focus,
+a:active{
+  color: #D20200;
+}
+body.article .nav-link{
+  color: #000;
+}
+
+body.article .nav-link:hover{
+  color: #D20200;
+}
+
 
 /* hover blijft rood */
 body.article .nav-link:hover{
