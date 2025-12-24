@@ -2,7 +2,7 @@
    TOPBAR (HOME ONLY)
 ========================= */
 .topbar{
-  background: #F6BDC8;
+  background: #transparant;
   height: 20px;
   width: 100%;
   position: fixed;
@@ -410,14 +410,14 @@ body.about .nav-link{
   text-align: center;
   color: #fff;
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: 22px;
   line-height: 1.4;
 }
 
 /* mobile: slightly smaller */
 @media (max-width: 600px){
   .home .home-tagline{
-    font-size: 16px;
+    font-size: 19px;
     margin-bottom: 22px;
   }
 }
