@@ -1,142 +1,122 @@
-/* =========================
-   RESET
-========================= */
-* {
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: Helvetica, Arial, sans-serif;
-  background: #fff;
-  color: #000;
-}
+  <title>The Slow Dose – A journal on nutrition, health, and slowing down</title>
+  <meta name="description" content="The Slow Dose: A journal on nutrition, health, and slowing down." />
 
-/* =========================
-   TOPBAR
-========================= */
-.topbar {
-  background: #0064fa;
-  height: 20px;
-  width: 100%;
-}
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-/* =========================
-   CONTAINER
-========================= */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px 40px;
-  position: relative;
-}
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles.css" />
+</head>
 
-/* =========================
-   HEADINGS
-========================= */
-h3 {
-  font-size: 60px;
-  text-align: center;
-  margin: 80px 0 10px;
-}
+<body>
 
-h4 {
-  font-size: 20px;
-  text-align: center;
-  margin-bottom: 60px;
-}
+  <div class="topbar"></div>
 
-/* =========================
-   SOUND CONTROL
-========================= */
-.sound-control {
-  position: absolute;
-  top: 35px;
-  left: -150px;
-}
+  <div class="container">
 
-.sound-control a {
-  text-decoration: underline;
-  color: #000;
-  font-size: 14px;
-}
+    <div class="sound-control">
+      <a href="javascript:void(0);" onclick="toggleSound()">
+        <span id="sound-icon">▶</span>
+        <span id="sound-text">Play soothing sounds</span>
+      </a>
+      <audio id="soothing-audio" loop>
+        <source src="/sounds/noise-of-birds-on-the-watercourse-206341.mp3" type="audio/mpeg">
+      </audio>
+    </div>
 
-/* =========================
-   SHOPIFY STYLE SEQUENCE
-========================= */
-.homepage-sequence {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15rem;
-}
+    <h3>THE SLOW DOSE</h3>
+    <h4>a journal on nutrition, health, and slowing down.</h4>
 
-/* widths */
-.img-group-small { width: 30%; }
-.img-group-big   { width: 45%; }
-.img-group-double{ width: 80%; }
+    <!-- SHOPIFY STYLE IMAGE SEQUENCE -->
+    <div class="homepage-sequence">
 
-/* images */
-.homepage-sequence img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.25s ease;
-}
+      <div class="img-group-small">
+        <a href="/articles/Cycle-Cyncing.html">
+          <img src="/images/IMG_3662 2.jpg">
+        </a>
+      </div>
 
-.homepage-sequence a:hover img {
-  transform: scale(1.03);
-}
+      <div class="img-group-double">
+        <div class="double-img">
+          <a href="/articles/Gelatin-gummies.html">
+            <img src="/images/IMG_2946.JPG">
+          </a>
+          <a href="/articles/Wellness-trends.html">
+            <img src="/images/IMG_2799.jpg">
+          </a>
+        </div>
+      </div>
 
-/* double images */
-.double-img {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 60px;
-  align-items: center;
-}
+      <div class="img-group-big">
+        <a href="/articles/Miso-soup.html">
+          <img src="/images/IMG_2723.jpg">
+        </a>
+      </div>
 
-/* =========================
-   FOOTER
-========================= */
-footer {
-  background: #39FF14;
-  color: #fff;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
-}
+      <div class="img-group-double">
+        <div class="double-img">
+          <a href="/articles/The-omega-story.html">
+            <img src="/images/IMG_2613.jpg">
+          </a>
+          <a href="/articles/Should-I-buy-this-organic.html">
+            <img src="/images/IMG_2334.jpg">
+          </a>
+        </div>
+      </div>
 
-footer a {
-  color: #fff;
-}
+      <div class="img-group-small">
+        <a href="/articles/Skincare-less-is-more.html">
+          <img src="/images/IMG_2330.JPG">
+        </a>
+      </div>
 
-/* =========================
-   MOBILE
-========================= */
-@media (max-width: 790px) {
-  .img-group-small { width: 70%; }
-  .img-group-big,
-  .img-group-double { width: 100%; }
+      <div class="img-group-double">
+        <div class="double-img">
+          <a href="/articles/The-morning-lineup-nourishing-food-to-start-your-day.html">
+            <img src="/images/IMG_2232 2.jpg">
+          </a>
+          <a href="/articles/The-confusing-world-of-dental-care.html">
+            <img src="/images/IMG_2242.JPG">
+          </a>
+        </div>
+      </div>
 
-  .double-img {
-    gap: 20px;
-  }
+    </div>
+  </div>
 
-  .homepage-sequence {
-    gap: 7rem;
-  }
+  <footer>
+    <div>2025</div>
+    <div>
+      inbox: <a href="mailto:theslowdose@gmail.com">theslowdose@gmail.com</a><br>
+      updates: <a href="https://www.instagram.com/theslowdose">@theslowdose</a>
+    </div>
+  </footer>
 
-  .sound-control {
-    position: relative;
-    left: 0;
-    top: 0;
-    margin-bottom: 20px;
-  }
+  <script>
+    function toggleSound() {
+      const audio = document.getElementById("soothing-audio");
+      const icon = document.getElementById("sound-icon");
+      const text = document.getElementById("sound-text");
 
-  h3 {
-    margin-top: 30px;
-  }
-}
+      if (audio.paused) {
+        audio.play();
+        icon.textContent = "❚❚";
+        text.textContent = "Pause";
+      } else {
+        audio.pause();
+        icon.textContent = "▶";
+        text.textContent = "Play soothing sounds";
+      }
+    }
+  </script>
+
+</body>
+</html>
