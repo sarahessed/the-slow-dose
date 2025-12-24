@@ -315,10 +315,10 @@ footer a {
 ========================= */
 ::selection {
   background: #D20200;
-  color: #000;
+  color: #fff;
 }
 
 ::-moz-selection {
   background: #D20200;
-  color: #000;
+  color: #fff;
 }
