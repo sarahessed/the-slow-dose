@@ -46,50 +46,40 @@
 }
 
 /* =========================
-   RESET / LAYOUT  (FIXED)
+   RESET / LAYOUT (STABLE)
 ========================= */
-
-/* 1) Roze achter de pagina (overscroll / rubber band) */
 html {
-  background: #F6BDC8;
+  background: #F6BDC8;   /* overscroll / rubber-band */
   height: 100%;
 }
 
-/* 2) Beige pagina zelf */
 body {
-  background: #F4E7C6;
-  min-height: 100vh;
-  overflow-y: auto; /* beter dan scroll */
-}
-
-/* 3) Algemene resets */
-html, body {
   margin: 0;
   padding: 0;
+  background: transparent; /* belangrijk: laat html roze zien */
   color: #000;
 
-  display: flex;
-  flex-direction: column;
-
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+  min-height: 100vh;
+  overflow-y: auto;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
 *, *::before, *::after {
   box-sizing: inherit;
 }
 
-/* 4) Extra “force” laag voor desktop Safari/Chrome overscroll */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: #F6BDC8;   /* roze overscroll */
-  z-index: -1;
+/* Beige “pagina” laag */
+.page {
+  background: #F4E7C6;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
 }
+
 
 /* =========================
    BODY TEXT
