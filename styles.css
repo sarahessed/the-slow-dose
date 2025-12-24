@@ -1,5 +1,16 @@
 /* =========================
-   VARIABLES (ONE SOURCE)
+   FONT
+========================= */
+@font-face{
+  font-family: "Neue Haas Display";
+  src: url("fonts/NeueHaasDisplayRoman.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================
+   VARIABLES
 ========================= */
 :root{
   --font-body: Helvetica, Arial, sans-serif;
@@ -21,17 +32,6 @@
 }
 
 /* =========================
-   FONT
-========================= */
-@font-face{
-  font-family: "Neue Haas Display";
-  src: url("fonts/NeueHaasDisplayRoman.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* =========================
    RESET
 ========================= */
 *{ box-sizing: border-box; }
@@ -46,18 +46,30 @@ html, body{
 }
 
 /* =========================
-   BODY
+   BASE
 ========================= */
 body{
   font-family: var(--font-body);
   font-size: var(--body-size);
   line-height: var(--lh-body);
-  background: #F4E7C6;
+  background: #F4E7C6; /* home default */
   color: #000;
 }
 
+/* LINKS: black, no underline (everywhere) */
+a{
+  color: #000;
+  text-decoration: none;
+}
+a:hover,
+a:focus,
+a:active{
+  color: var(--accent-red);
+  outline: none;
+}
+
 /* =========================
-   TOPBAR (HOME)
+   TOPBAR (HOME ONLY)
 ========================= */
 .topbar{
   position: fixed;
@@ -74,12 +86,12 @@ body{
 ========================= */
 .site-header{
   position: fixed;
-  top: 0;
+  top: 0;                 /* IMPORTANT: same on every page */
   left: 0;
   width: 100%;
   height: var(--header-height);
   z-index: 9998;
-  background: transparent;
+  background: transparent; /* home */
 }
 
 .nav-inner{
@@ -95,9 +107,7 @@ body{
 .nav-center{ text-align: center; }
 .nav-right{ text-align: right; }
 
-/* =========================
-   LOGO & NAV LINKS
-========================= */
+/* LOGO — never underline */
 .logo,
 .logo:link,
 .logo:visited,
@@ -108,20 +118,20 @@ body{
   font-size: clamp(22px, 4.6vw, 64px);
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #fff;
+  color: #fff;                 /* home */
   text-decoration: none !important;
   white-space: nowrap;
 }
 
+/* NAV LINK (about) */
 .nav-link{
   font-family: var(--font-body);
   font-size: 22px;
-  color: #fff;
-  text-decoration: none;
+  color: #fff;                 /* home */
+  text-decoration: none !important;
   text-transform: lowercase;
+  -webkit-tap-highlight-color: transparent;
 }
-
-.nav-link:hover{ color: var(--accent-red); }
 
 /* =========================
    CONTAINER
@@ -132,6 +142,31 @@ body{
   padding: calc(var(--header-height) + 40px)
            var(--page-padding-x)
            var(--page-padding-bottom);
+}
+
+/* =========================
+   HOMEPAGE: remove the extra black title/text
+   (keeps ONLY .home-tagline and images)
+========================= */
+body.home .container > h1,
+body.home .container > h2,
+body.home .container > h3,
+body.home .container > h4{
+  display: none !important;
+}
+
+body.home .container > p:not(.home-tagline){
+  display: none !important;
+}
+
+/* homepage tagline (white, centered) */
+body.home .home-tagline{
+  margin: 40px 0 30px 0;
+  text-align: center;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 22px;
+  line-height: 1.4;
 }
 
 /* =========================
@@ -146,14 +181,16 @@ body{
 
 .sound-control a{
   color: #000;
-  text-decoration: none;
+  text-decoration: none !important;
   display: inline-flex;
   gap: 10px;
   align-items: center;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #sound-icon{ font-family: var(--font-body); }
 
+/* Mobile Safari: SVG mask icon, black */
 @media (max-width: 600px){
   #sound-icon{
     width: 16px;
@@ -170,17 +207,6 @@ body{
     -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M4 3h3v10H4V3zm5 0h3v10H9V3z'/%3E%3C/svg%3E") no-repeat center / contain;
             mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M4 3h3v10H4V3zm5 0h3v10H9V3z'/%3E%3C/svg%3E") no-repeat center / contain;
   }
-}
-
-/* =========================
-   HOMEPAGE TAGLINE
-========================= */
-.home .home-tagline{
-  margin: 0 0 30px 0;
-  text-align: center;
-  color: #fff;
-  font-size: 22px;
-  line-height: 1.4;
 }
 
 /* =========================
@@ -206,6 +232,12 @@ body{
   width: 100%;
   height: auto;
   display: block;
+  object-fit: cover;
+  transition: transform .25s ease;
+}
+
+.homepage-sequence a:hover img{
+  transform: scale(1.03);
 }
 
 /* =========================
@@ -215,58 +247,113 @@ footer{
   background: var(--accent-red);
   color: #000;
   padding: 80px 20px;
+  min-height: 140px;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+footer a{
+  color: #000;
+  text-decoration: none !important;
 }
 
 /* =========================
-   ABOUT
+   ARTICLE PAGE
+========================= */
+body.article{
+  background: #C1C1CB;
+}
+
+body.article .topbar{
+  display: none;
+}
+
+body.article .site-header{
+  background: #C1C1CB;
+}
+
+body.article .logo,
+body.article .nav-link{
+  color: #000;
+}
+
+/* "top" link at bottom: lowercase + no underline */
+.top-link,
+.top-link:link,
+.top-link:visited,
+.top-link:hover,
+.top-link:focus,
+.top-link:active{
+  text-transform: lowercase;
+  text-decoration: none !important;
+  color: #000;
+}
+.top-link:hover,
+.top-link:focus,
+.top-link:active{
+  color: var(--accent-red);
+}
+
+/* =========================
+   ABOUT PAGE
 ========================= */
 body.about{
   background: #F6BDC8;
   color: #fff;
 }
 
-body.about .topbar{ display:none; }
+body.about .topbar{
+  display: none;
+}
 
 body.about .site-header{
   background: #F6BDC8;
 }
 
 body.about .logo,
-body.about .nav-link{ color:#fff; }
-
-.about-spacer{ height:600px; }
-
-/* =========================
-   ARTICLE
-========================= */
-body.article{
-  background: #C1C1CB;
+body.about .nav-link{
+  color: #fff;
 }
 
-body.article .topbar{ display:none; }
-
-body.article .site-header{
-  background:#C1C1CB;
+/* spacer before footer (optional in HTML: <div class="about-spacer"></div>) */
+.about-spacer{
+  height: 600px;
 }
-
-body.article .logo,
-body.article .nav-link{ color:#000; }
 
 /* =========================
    MOBILE
 ========================= */
-@media (max-width:600px){
+@media (max-width: 600px){
   body{ font-size: var(--body-size-mobile); }
-  .logo{ font-size:24px; }
-  .nav-link{ font-size:16px; }
-  .homepage-sequence{ gap:7rem; }
-  footer{ flex-direction:column; gap:24px; }
+
+  .logo{ font-size: 24px; }
+  .nav-link{ font-size: 16px; }
+
+  body.home .home-tagline{
+    font-size: 19px;
+    margin: 30px 0 22px 0;
+  }
+
+  .img-group-small,
+  .img-group-big,
+  .img-group-double{
+    width: 100%;
+  }
+
+  .homepage-sequence{
+    gap: 7rem;
+  }
+
+  footer{
+    flex-direction: column;
+    gap: 24px;
+  }
 }
 
 /* =========================
    SELECTION
 ========================= */
-::selection{ background: var(--accent-red); color:#000; }
-::-moz-selection{ background: var(--accent-red); color:#000; }
+::selection{ background: var(--accent-red); color: #000; }
+::-moz-selection{ background: var(--accent-red); color: #000; }
