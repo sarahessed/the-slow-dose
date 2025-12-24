@@ -318,7 +318,7 @@ footer{
   align-items: flex-start;
   gap: 16px;
 
-  padding: 40px 20px;   /* bigger */
+  padding: 80px 20px;   /* bigger */
   min-height: 140px;    /* more red */
 
   width: 100%;
