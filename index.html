@@ -54,75 +54,196 @@
 <body>
     <div class="topbar"></div>
 
-    <div class="container">
-        <div class="sound-control">
-            <a href="javascript:void(0);" onclick="toggleSound()" id="sound-link">
-                <span id="sound-icon">▶</span> <span id="sound-text">Play soothing sounds</span>
-            </a>
-            <audio id="soothing-audio" loop>
-                <source src="/sounds/noise-of-birds-on-the-watercourse-206341.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
+ <!-- ... alles hierboven blijft hetzelfde ... -->
 
-        <h3>THE SLOW DOSE</h3>
-        <h4>a journal on nutrition, health, and slowing down.</h4>
-        
-        <div class="grid">
+<div class="container">
+  <div class="sound-control">
+    <a href="javascript:void(0);" onclick="toggleSound()" id="sound-link">
+      <span id="sound-icon">▶</span> <span id="sound-text">Play soothing sounds</span>
+    </a>
+    <audio id="soothing-audio" loop>
+      <source src="/sounds/noise-of-birds-on-the-watercourse-206341.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
 
-        <a href="/articles/Cycle-Cyncing.html">
-                <img src="/images/IMG_3662 2.jpg" alt="Article 9"> 
-            
-        <a href="/articles/Gelatin-gummies.html">
-                <img src="/images/IMG_2946.JPG" alt="Article 8">   
-             
-         <a href="/articles/Wellness-trends.html">
-                <img src="/images/IMG_2799.jpg " alt="Article 7">   
-             
-           <a href="/articles/Miso-soup.html">
-                <img src="/images/IMG_2723.jpg" alt="Article 6"> 
-            
-            <a href="/articles/The-omega-story.html">
-                <img src="/images/IMG_2613.jpg" alt="Article 5"> 
-                             
-             <a href="/articles/Should-I-buy-this-organic.html">
-                <img src="/images/IMG_2334.jpg" alt="Article 4">  
-                 
-            <a href="/articles/Skincare-less-is-more.html">
-                <img src="/images/IMG_2330.JPG" alt="Article 3">  
-                
-            <a href="/articles/The-morning-lineup-nourishing-food-to-start-your-day.html">
-                <img src="/images/IMG_2232 2.jpg" alt="Article 2">  
-            </a>
-            <a href="/articles/The-confusing-world-of-dental-care.html">
-                <img src="/images/IMG_2242.JPG" alt="Article 1">     
-            </a>    
-        </div>
-    </div>
+  <h3>THE SLOW DOSE</h3>
+  <h4>a journal on nutrition, health, and slowing down.</h4>
 
-    <footer> 
-        <div class="footer-left">2025</div>
-        <div class="footer-right">
-            inbox: <a href="mailto:theslowdose@gmail.com">theslowdose@gmail.com</a><br/>
-            updates: <a href="https://www.instagram.com/theslowdose" target="_blank">@theslowdose</a>
-        </div>
-    </footer>
+  <!-- NEW: scatter container -->
+  <div class="scatter" id="scatter">
+    <a class="tile" href="/articles/Cycle-Cyncing.html">
+      <img src="/images/IMG_3662 2.jpg" alt="Cycle syncing">
+    </a>
 
-    <script>
-    function toggleSound() {
-        var audio = document.getElementById("soothing-audio");
-        var icon = document.getElementById("sound-icon");
-        var text = document.getElementById("sound-text");
-        if (audio.paused) {
-            audio.play();
-            icon.textContent = "❚❚";
-            text.textContent = "Pause";
-        } else {
-            audio.pause();
-            icon.textContent = "▶";
-            text.textContent = "Play soothing sounds";
-        }
+    <a class="tile" href="/articles/Gelatin-gummies.html">
+      <img src="/images/IMG_2946.JPG" alt="Gelatin gummies">
+    </a>
+
+    <a class="tile" href="/articles/Wellness-trends.html">
+      <img src="/images/IMG_2799.jpg" alt="Wellness trends">
+    </a>
+
+    <a class="tile" href="/articles/Miso-soup.html">
+      <img src="/images/IMG_2723.jpg" alt="Miso soup">
+    </a>
+
+    <a class="tile" href="/articles/The-omega-story.html">
+      <img src="/images/IMG_2613.jpg" alt="Omega story">
+    </a>
+
+    <a class="tile" href="/articles/Should-I-buy-this-organic.html">
+      <img src="/images/IMG_2334.jpg" alt="Should I buy this organic">
+    </a>
+
+    <a class="tile" href="/articles/Skincare-less-is-more.html">
+      <img src="/images/IMG_2330.JPG" alt="Skincare less is more">
+    </a>
+
+    <a class="tile" href="/articles/The-morning-lineup-nourishing-food-to-start-your-day.html">
+      <img src="/images/IMG_2232 2.jpg" alt="Morning lineup">
+    </a>
+
+    <a class="tile" href="/articles/The-confusing-world-of-dental-care.html">
+      <img src="/images/IMG_2242.JPG" alt="Dental care">
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-left">2025</div>
+  <div class="footer-right">
+    inbox: <a href="mailto:theslowdose@gmail.com">theslowdose@gmail.com</a><br/>
+    updates: <a href="https://www.instagram.com/theslowdose" target="_blank" rel="noopener">@theslowdose</a>
+  </div>
+</footer>
+
+<script>
+  function toggleSound() {
+    var audio = document.getElementById("soothing-audio");
+    var icon = document.getElementById("sound-icon");
+    var text = document.getElementById("sound-text");
+    if (audio.paused) {
+      audio.play();
+      icon.textContent = "❚❚";
+      text.textContent = "Pause";
+    } else {
+      audio.pause();
+      icon.textContent = "▶";
+      text.textContent = "Play soothing sounds";
     }
-    </script>
+  }
+</script>
+
+<!-- NEW: scatter script -->
+<script>
+  function rectsOverlap(a, b, pad) {
+    return !(
+      a.right + pad < b.left ||
+      a.left > b.right + pad ||
+      a.bottom + pad < b.top ||
+      a.top > b.bottom + pad
+    );
+  }
+
+  function layoutScatter() {
+    const container = document.getElementById("scatter");
+    if (!container) return;
+
+    const tiles = Array.from(container.querySelectorAll(".tile"));
+    const placed = [];
+
+    // reset
+    tiles.forEach(t => {
+      t.style.left = "0px";
+      t.style.top = "0px";
+      t.style.width = "";
+      t.style.position = "absolute";
+      t.style.visibility = "hidden";
+    });
+
+    const containerWidth = container.clientWidth;
+    const isMobile = window.matchMedia("(max-width: 700px)").matches;
+
+    const minW = isMobile ? Math.min(220, containerWidth - 24) : 240;
+    const maxW = isMobile ? Math.min(320, containerWidth - 24) : 460;
+
+    const pad = isMobile ? 10 : 18;
+    const margin = isMobile ? 10 : 22;
+
+    // start height guess
+    let maxBottom = 0;
+
+    // make sure images are loaded-ish (use current natural ratio)
+    tiles.forEach((tile, idx) => {
+      const w = Math.max(minW, Math.min(maxW, minW + Math.random() * (maxW - minW)));
+      tile.style.width = w + "px";
+      tile.style.visibility = "visible";
+
+      // estimate height after width set
+      const r = tile.getBoundingClientRect();
+      const tileW = r.width;
+
+      // try random placements
+      let placedRect = null;
+      const attempts = isMobile ? 80 : 220;
+
+      for (let i = 0; i < attempts; i++) {
+        const x = margin + Math.random() * Math.max(0, (containerWidth - tileW - margin * 2));
+        const y = margin + Math.random() * Math.max(0, 1400); // playfield height
+
+        tile.style.left = x + "px";
+        tile.style.top = y + "px";
+
+        const rr = tile.getBoundingClientRect();
+        const rect = { left: rr.left, top: rr.top, right: rr.right, bottom: rr.bottom };
+
+        let ok = true;
+        for (const p of placed) {
+          if (rectsOverlap(rect, p, pad)) { ok = false; break; }
+        }
+        if (ok) { placedRect = rect; break; }
+      }
+
+      // fallback: stack downward if random failed
+      if (!placedRect) {
+        const x = margin;
+        const y = maxBottom + margin;
+        tile.style.left = x + "px";
+        tile.style.top = y + "px";
+        const rr = tile.getBoundingClientRect();
+        placedRect = { left: rr.left, top: rr.top, right: rr.right, bottom: rr.bottom };
+      }
+
+      placed.push(placedRect);
+      maxBottom = Math.max(maxBottom, placedRect.bottom - container.getBoundingClientRect().top);
+    });
+
+    // set container height so footer doesn't overlap
+    container.style.height = (maxBottom + (isMobile ? 40 : 80)) + "px";
+  }
+
+  // layout on load + when images load + resize
+  window.addEventListener("load", layoutScatter);
+  window.addEventListener("resize", () => {
+    clearTimeout(window.__scatterT);
+    window.__scatterT = setTimeout(layoutScatter, 150);
+  });
+
+  // if images load later, relayout once
+  document.addEventListener("DOMContentLoaded", () => {
+    const imgs = document.querySelectorAll("#scatter img");
+    let fired = false;
+    imgs.forEach(img => {
+      img.addEventListener("load", () => {
+        if (fired) return;
+        fired = true;
+        setTimeout(layoutScatter, 50);
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
+
