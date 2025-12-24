@@ -1,232 +1,279 @@
 /* =========================
+   PIEN-STYLE CSS (IDENTICAL FEEL)
+   - Body = Helvetica (zoals Pien: --FONT-STACK-BODY)
+   - Headings = jouw Neue Haas Display Roman
+   - Tracking/line-height aangepast naar Pien-achtig
+========================= */
+
+/* =========================
    TOPBAR
 ========================= */
 .topbar {
-    background: #0064fa;
-    height: 15px;
-    width: 100%;
+  background: #0064fa;
+  height: 15px;
+  width: 100%;
 }
 
 /* =========================
-   FONT
+   FONT (HEADINGS)
 ========================= */
 @font-face {
-    font-family: "Neue Haas Display";
-    src: url("fonts/NeueHaasDisplayRoman.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Neue Haas Display";
+  src: url("fonts/NeueHaasDisplayRoman.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================
+   BASE / VARIABLES (PIEN-STYLE)
+========================= */
+:root {
+  --FONT-STACK-BODY: Helvetica, Arial, sans-serif;
+  --FONT-STACK-HEADING: "Neue Haas Display", Helvetica, Arial, sans-serif;
+
+  --FONT-WEIGHT-BODY: 400;
+  --FONT-WEIGHT-HEADING: 400;
+
+  /* Pien-like type feel */
+  --BODY-LH: 1.45;
+  --HEADING-LH: 1.2;
+
+  /* Pien tracking is basically 0 */
+  --BODY-TRACKING: 0em;
+  --HEADING-TRACKING: 0em;
 }
 
 /* =========================
    RESET / LAYOUT
 ========================= */
 html, body {
-    margin: 0;
-    padding: 0;
-    font-size: 18px;
-    line-height: 1.55;
-    background: white;
-    color: #000;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    overflow-y: scroll;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #000;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 /* =========================
-   BODY TEXT
+   BODY TEXT (PIEN)
 ========================= */
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.005em;
+  font-family: var(--FONT-STACK-BODY);
+  font-weight: var(--FONT-WEIGHT-BODY);
+  font-size: 18px;
+  line-height: var(--BODY-LH);
+  letter-spacing: var(--BODY-TRACKING);
 }
 
 /* =========================
-   HEADINGS
+   HEADINGS (PIEN FEEL)
 ========================= */
 h1, h2, h3, h4 {
-    font-family: "Neue Haas Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.02em;
+  font-family: var(--FONT-STACK-HEADING);
+  font-weight: var(--FONT-WEIGHT-HEADING);
+  line-height: var(--HEADING-LH);
+  letter-spacing: var(--HEADING-TRACKING);
+  margin: 0.5em 0;
 }
 
+/* Match your current sizes but with Pien-like spacing */
 h1 {
-    font-size: 40px;
-    margin-bottom: 1px;
-    text-align: left;
+  font-size: 40px;
+  margin: 0 0 12px 0;
+  text-align: left;
 }
 
 h2 {
-    font-size: 1.25rem;
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  margin: 2rem 0 0.5rem 0;
 }
 
 h3 {
-    font-size: 60px;
-    margin-bottom: 10px;
-    text-align: center;
+  font-size: 60px;
+  margin: 0 0 10px 0;
+  text-align: center;
 }
 
 h4 {
-    font-size: 20px;
-    margin-bottom: 40px;
-    text-align: center;
+  font-size: 20px;
+  margin: 0 0 40px 0;
+  text-align: center;
 }
 
 /* =========================
-   LINKS / NAV
+   LINKS (PIEN: no underline by default, but keep yours)
 ========================= */
 a {
-    color: black;
-    text-decoration: underline;
+  color: #000;
+  text-decoration: underline;
 }
 
 a:hover {
-    color: black;
-}
-
-.home-link,
-.top-link,
-.sound-control a {
-    font-size: 1rem;
-    font-weight: 400;
-    text-decoration: underline;
-    color: black;
-}
-
-.top-links {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-.top-button {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
+  color: #000;
 }
 
 /* =========================
-   CONTAINERS
+   TOP NAV LINKS
 ========================= */
-.container {
-    position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px 20px;
-    flex: 1;
+.home-link,
+.top-link,
+.sound-control a {
+  font-family: var(--FONT-STACK-BODY);
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: underline;
+  color: #000;
+  letter-spacing: 0;
 }
 
+.top-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.top-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+/* =========================
+   CONTAINERS (PIEN-like column width)
+========================= */
+.container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px 20px;
+  flex: 1;
+}
+
+/* Pien body text is not super-justified; justify can look different.
+   If you truly want identical feel: left align. */
 .container.left {
-    max-width: 800px;
-    text-align: justify;
-    line-height: 1.7;
-    padding-bottom: 10px;
+  max-width: 800px;
+  text-align: left;       /* <-- changed from justify for Pien feel */
+  line-height: 1.5;       /* <-- closer to Pien than 1.7 */
+  padding-bottom: 10px;
 }
 
 /* =========================
    SOUND CONTROL
 ========================= */
 .sound-control {
-    position: absolute;
-    top: 35px;
-    left: -150px;
+  position: absolute;
+  top: 35px;
+  left: -150px;
 }
 
 /* =========================
    LISTS
 ========================= */
+ol, ul {
+  margin: 0 0 1.5em 1.3em; /* Pien-ish spacing */
+  padding: 0;
+}
+
 ol li,
 ul li {
-    margin-bottom: 10px;
+  margin: 0 0 0.25em 0;   /* Pien uses tighter list spacing */
 }
 
 /* =========================
    GRID
 ========================= */
 .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 100%;
-    max-width: 1000px;
-    gap: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  max-width: 1000px;
+  gap: 0;
 }
 
 .grid a img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 .grid a img:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 /* =========================
    FOOTER
 ========================= */
 footer {
-    background: #39FF14;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    font-size: 14px;
-    width: 100%;
-    box-sizing: border-box;
+  background: #39FF14;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 footer a {
-    color: white;
-    text-decoration: underline;
+  color: #fff;
+  text-decoration: underline;
 }
 
 /* =========================
    MEDIA QUERIES
 ========================= */
 @media (max-width: 900px) {
-    .sound-control {
-        position: relative;
-        top: 5px;
-        left: 0;
-        margin-bottom: 20px;
-    }
+  .sound-control {
+    position: relative;
+    top: 5px;
+    left: 0;
+    margin-bottom: 20px;
+  }
 }
 
 @media (max-width: 600px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 0;
-    }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+  }
 
-    .grid a img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
+  .grid a img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
 }
 
 /* =========================
    TEXT SELECTION
 ========================= */
 ::selection {
-    background: #ff00ff;
-    color: black;
+  background: #ff00ff;
+  color: #000;
 }
 
 ::-moz-selection {
-    background: #ff00ff;
-    color: black;
+  background: #ff00ff;
+  color: #000;
 }
