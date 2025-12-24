@@ -305,12 +305,12 @@ footer a{
   }
 
   .logo{
-    font-size: 24px;          /* kleiner op mobiel */
+    font-size: 26px;          /* kleiner op mobiel */
     letter-spacing: 0.03em;
   }
 
   .nav-link{
-    font-size: 15px;          /* about kleiner op mobiel */
+    font-size: 20px;          /* about kleiner op mobiel */
   }
 
   /* images: full width on mobile */
