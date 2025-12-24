@@ -148,8 +148,13 @@
     const gap = isMobile ? 12 : 26;
 
     // widths per type
-    const bigW = isMobile ? Math.min(W - sideMargin * 2, 420) : 520;
-    const smallW = isMobile ? Math.min((W - sideMargin * 2 - gap), 420) : 420;
+ const available = W - sideMargin * 2;
+
+// big: max 520, maar nooit breder dan container
+const bigW = Math.min(520, available);
+
+// two-up: (available - gap) / 2, met max 420
+const smallW = Math.min(420, Math.floor((available - gap) / 2));
 
     // vertical rhythm (ruimte tussen rijen)
     const rowGap = isMobile ? 26 : 40;
