@@ -2,7 +2,7 @@
    TOPBAR
 ========================= */
 .topbar {
-  background: #0064fa;
+  background: #C1C1CB;
   height: 20px;
   width: 100%;
   position: fixed; /* blijft blauw bij scroll */
@@ -314,11 +314,11 @@ footer a {
    TEXT SELECTION
 ========================= */
 ::selection {
-  background: #ff00ff;
+  background: #D20200;
   color: #000;
 }
 
 ::-moz-selection {
-  background: #ff00ff;
+  background: #D20200;
   color: #000;
 }
