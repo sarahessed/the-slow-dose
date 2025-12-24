@@ -391,3 +391,34 @@ footer a{
   background: #D20200;
   color: #000;
 }
+
+/* =========================
+   ARTICLE PAGE OVERRIDES
+========================= */
+
+/* andere achtergrond */
+body.article{
+  background: #C1C1CB;
+}
+
+/* geen roze topbar */
+body.article .topbar{
+  display: none;
+}
+
+/* logo + about zwart op artikelen */
+body.article .logo,
+body.article .nav-link{
+  color: #000;
+}
+
+/* hover blijft rood */
+body.article .nav-link:hover{
+  color: #D20200;
+}
+
+/* container iets meer contrast op grijs */
+body.article .container.left{
+  background: transparent;
+}
+
