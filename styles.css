@@ -1,4 +1,3 @@
-
 /* =========================
    TOPBAR
 ========================= */
@@ -20,22 +19,27 @@
 }
 
 /* =========================
-   BASE / VARIABLES (PIEN-STYLE)
+   BASE VARIABLES
 ========================= */
 :root {
-  --FONT-STACK-BODY: Helvetica, Arial, sans-serif;
-  --FONT-STACK-HEADING: "Neue Haas Display", Helvetica, Arial, sans-serif;
+  --font-body: Helvetica, Arial, sans-serif;
+  --font-heading: "Neue Haas Display", Helvetica, Arial, sans-serif;
 
-  --FONT-WEIGHT-BODY: 400;
-  --FONT-WEIGHT-HEADING: 400;
+  --weight-body: 400;
+  --weight-heading: 400;
 
-  /* Pien-like type feel */
-  --BODY-LH: 1.45;
-  --HEADING-LH: 1.2;
+  --lh-body: 1.45;
+  --lh-heading: 1.2;
 
-  /* Pien tracking is basically 0 */
-  --BODY-TRACKING: 0em;
-  --HEADING-TRACKING: 0em;
+  --tracking-body: 0em;
+  --tracking-heading: 0em;
+
+  /* PAGE SPACING */
+  --page-padding-x: 20px;
+  --page-padding-bottom: 20px;
+
+  /* MOVE TITLE DOWN (adjust this) */
+  --title-offset: 80px; /* ↑ zet hoger/lager: 40px, 100px, etc. */
 }
 
 /* =========================
@@ -64,28 +68,27 @@ html, body {
 }
 
 /* =========================
-   BODY TEXT (PIEN)
+   BODY TEXT
 ========================= */
 body {
-  font-family: var(--FONT-STACK-BODY);
-  font-weight: var(--FONT-WEIGHT-BODY);
+  font-family: var(--font-body);
+  font-weight: var(--weight-body);
   font-size: 18px;
-  line-height: var(--BODY-LH);
-  letter-spacing: var(--BODY-TRACKING);
+  line-height: var(--lh-body);
+  letter-spacing: var(--tracking-body);
 }
 
 /* =========================
-   HEADINGS (PIEN FEEL)
+   HEADINGS
 ========================= */
 h1, h2, h3, h4 {
-  font-family: var(--FONT-STACK-HEADING);
-  font-weight: var(--FONT-WEIGHT-HEADING);
-  line-height: var(--HEADING-LH);
-  letter-spacing: var(--HEADING-TRACKING);
+  font-family: var(--font-heading);
+  font-weight: var(--weight-heading);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-heading);
   margin: 0.5em 0;
 }
 
-/* Match your current sizes but with Pien-like spacing */
 h1 {
   font-size: 40px;
   margin: 0 0 12px 0;
@@ -97,10 +100,14 @@ h2 {
   margin: 2rem 0 0.5rem 0;
 }
 
+/* MAIN TITLE (The Slow Dose) */
 h3 {
   font-size: 60px;
-  margin: 0 0 10px 0;
   text-align: center;
+
+  /* Put the title lower on the page */
+  margin-top: var(--title-offset);
+  margin-bottom: 10px;
 }
 
 h4 {
@@ -110,7 +117,7 @@ h4 {
 }
 
 /* =========================
-   LINKS (PIEN: no underline by default, but keep yours)
+   LINKS
 ========================= */
 a {
   color: #000;
@@ -127,7 +134,7 @@ a:hover {
 .home-link,
 .top-link,
 .sound-control a {
-  font-family: var(--FONT-STACK-BODY);
+  font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 400;
   text-decoration: underline;
@@ -150,22 +157,21 @@ a:hover {
 }
 
 /* =========================
-   CONTAINERS (PIEN-like column width)
+   CONTAINERS
 ========================= */
 .container {
   position: relative;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 20px 20px;
+  padding: 0 var(--page-padding-x) var(--page-padding-bottom);
   flex: 1;
 }
 
-/* Pien body text is not super-justified; justify can look different.
-   If you truly want identical feel: left align. */
+/* Article text column */
 .container.left {
   max-width: 800px;
-  text-align: left;       /* <-- changed from justify for Pien feel */
-  line-height: 1.5;       /* <-- closer to Pien than 1.7 */
+  text-align: left;
+  line-height: 1.5;
   padding-bottom: 10px;
 }
 
@@ -182,13 +188,13 @@ a:hover {
    LISTS
 ========================= */
 ol, ul {
-  margin: 0 0 1.5em 1.3em; /* Pien-ish spacing */
+  margin: 0 0 1.5em 1.3em;
   padding: 0;
 }
 
 ol li,
 ul li {
-  margin: 0 0 0.25em 0;   /* Pien uses tighter list spacing */
+  margin: 0 0 0.25em 0;
 }
 
 /* =========================
@@ -244,6 +250,11 @@ footer a {
     left: 0;
     margin-bottom: 20px;
   }
+
+  /* On smaller screens, usually less title offset */
+  :root {
+    --title-offset: 40px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -256,6 +267,10 @@ footer a {
     width: 100%;
     height: auto;
     object-fit: cover;
+  }
+
+  :root {
+    --title-offset: 30px;
   }
 }
 
