@@ -1,100 +1,257 @@
 /* =========================
-   RESET
-========================= */
-* {
-  box-sizing: border-box;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: Helvetica, Arial, sans-serif;
-  background: #fff;
-  color: #000;
-}
-
-/* =========================
    TOPBAR
 ========================= */
 .topbar {
   background: #0064fa;
   height: 20px;
   width: 100%;
+  position: fixed; /* blijft blauw bij scroll */
+  top: 0;
+  left: 0;
+  z-index: 9999;
 }
 
 /* =========================
-   CONTAINER
+   FONT (HEADINGS)
 ========================= */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px 40px;
-  position: relative;
+@font-face {
+  font-family: "Neue Haas Display";
+  src: url("fonts/NeueHaasDisplayRoman.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================
+   BASE VARIABLES
+========================= */
+:root {
+  --font-body: Helvetica, Arial, sans-serif;
+  --font-heading: "Neue Haas Display", Helvetica, Arial, sans-serif;
+
+  --weight-body: 400;
+  --weight-heading: 400;
+
+  --lh-body: 1.45;
+  --lh-heading: 1.2;
+
+  --tracking-body: 0em;
+  --tracking-heading: 0em;
+
+  /* PAGE SPACING */
+  --page-padding-x: 20px;
+  --page-padding-bottom: 20px;
+
+  /* MOVE TITLE DOWN (adjust this) */
+  --title-offset: 80px;
+}
+
+/* =========================
+   RESET / LAYOUT
+========================= */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #000;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* =========================
+   BODY TEXT
+========================= */
+body {
+  font-family: var(--font-body);
+  font-weight: var(--weight-body);
+  font-size: 18px;
+  line-height: var(--lh-body);
+  letter-spacing: var(--tracking-body);
 }
 
 /* =========================
    HEADINGS
 ========================= */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-heading);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-heading);
+  margin: 0.5em 0;
+}
+
+h1 {
+  font-size: 40px;
+  margin: 0 0 12px 0;
+  text-align: left;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin: 2rem 0 0.5rem 0;
+}
+
+/* MAIN TITLE (The Slow Dose) */
 h3 {
   font-size: 60px;
   text-align: center;
-  margin: 80px 0 10px;
+
+  /* Put the title lower on the page */
+  margin-top: calc(var(--title-offset) + 20px); /* +20px i.v.m. fixed topbar */
+  margin-bottom: 10px;
 }
 
 h4 {
   font-size: 20px;
+  margin: 0 0 40px 0;
   text-align: center;
-  margin-bottom: 60px;
+}
+
+/* =========================
+   LINKS
+========================= */
+a {
+  color: #000;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #000;
+}
+
+/* =========================
+   TOP NAV LINKS
+========================= */
+.home-link,
+.top-link,
+.sound-control a {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: underline;
+  color: #000;
+  letter-spacing: 0;
+}
+
+.top-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.top-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+/* =========================
+   CONTAINERS
+========================= */
+.container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  /* ruimte onder fixed topbar */
+  padding: 20px var(--page-padding-x) var(--page-padding-bottom);
+  padding-top: 40px;
+
+  flex: 1;
+}
+
+/* Article text column */
+.container.left {
+  max-width: 800px;
+  text-align: left;
+  line-height: 1.5;
+  padding-bottom: 10px;
 }
 
 /* =========================
    SOUND CONTROL
 ========================= */
+/* was: left:-150px (buiten beeld). Nu in beeld, linksboven. */
 .sound-control {
-  position: absolute;
-  top: 35px;
-  left: -150px;
-}
-
-.sound-control a {
-  text-decoration: underline;
-  color: #000;
-  font-size: 14px;
+  position: fixed;
+  top: 40px;   /* net onder topbar */
+  left: 20px;  /* altijd zichtbaar */
+  z-index: 9998;
 }
 
 /* =========================
-   SHOPIFY STYLE SEQUENCE
+   LISTS
 ========================= */
-.homepage-sequence {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15rem;
+ol, ul {
+  margin: 0 0 1.5em 1.3em;
+  padding: 0;
 }
 
-/* widths */
-.img-group-small { width: 30%; }
-.img-group-big   { width: 45%; }
+ol li,
+ul li {
+  margin: 0 0 0.25em 0;
+}
+
+/* =========================
+   HOMEPAGE SEQUENCE (Shopify-style)
+========================= */
+.homepage-sequence{
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center alle blokken */
+  gap: 15rem;          /* grote verticale spacing */
+}
+
+/* widths per “groep” */
+.img-group-small{ width: 30%; }
+.img-group-big{ width: 45%; }
 .img-group-double{ width: 80%; }
 
 /* images */
-.homepage-sequence img {
+.homepage-sequence img{
   width: 100%;
   height: auto;
   display: block;
+  object-fit: cover;
   transition: transform 0.25s ease;
 }
 
-.homepage-sequence a:hover img {
+.homepage-sequence a:hover img{
   transform: scale(1.03);
 }
 
-/* double images */
-.double-img {
+/* double (2 naast elkaar) */
+.double-img{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
   gap: 60px;
   align-items: center;
+}
+
+.double-img-img{
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* =========================
@@ -103,22 +260,39 @@ h4 {
 footer {
   background: #39FF14;
   color: #fff;
-  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
   font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 footer a {
   color: #fff;
+  text-decoration: underline;
 }
-/* ========================= BASE VARIABLES ========================= */ :root { --font-body: Helvetica, Arial, sans-serif; --font-heading: "Neue Haas Display", Helvetica, Arial, sans-serif; --weight-body: 400; --weight-heading: 400; --lh-body: 1.45; --lh-heading: 1.2; --tracking-body: 0em; --tracking-heading: 0em; /* PAGE SPACING */ --page-padding-x: 20px; --page-padding-bottom: 20px; /* MOVE TITLE DOWN (adjust this) */ --title-offset: 80px; /* ↑ zet hoger/lager: 40px, 100px, etc. */ }
+
 /* =========================
-   MOBILE
+   MEDIA QUERIES
 ========================= */
-@media (max-width: 790px) {
+@media (max-width: 900px) {
+  .sound-control {
+    position: relative;
+    top: 5px;
+    left: 0;
+    margin-bottom: 20px;
+  }
+
+  :root {
+    --title-offset: 40px;
+  }
+}
+
+@media only screen and (max-width: 790px) {
   .img-group-small { width: 70%; }
-  .img-group-big,
+  .img-group-big { width: 100%; }
   .img-group-double { width: 100%; }
 
   .double-img {
@@ -128,15 +302,23 @@ footer a {
   .homepage-sequence {
     gap: 7rem;
   }
+}
 
-  .sound-control {
-    position: relative;
-    left: 0;
-    top: 0;
-    margin-bottom: 20px;
+@media (max-width: 600px) {
+  :root {
+    --title-offset: 30px;
   }
+}
 
-  h3 {
-    margin-top: 30px;
-  }
+/* =========================
+   TEXT SELECTION
+========================= */
+::selection {
+  background: #ff00ff;
+  color: #000;
+}
+
+::-moz-selection {
+  background: #ff00ff;
+  color: #000;
 }
