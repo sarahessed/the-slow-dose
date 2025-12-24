@@ -172,14 +172,23 @@ a:hover {
 
 .nav-link{
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: 26px;
   font-weight: 400;
+}
 
-  text-decoration: none;   /* geen streep */
-  color: #ffffff;          /* wit */
-  letter-spacing: 0;
+.nav-link{
+  color: #fff;
+  text-decoration: none;
   text-transform: lowercase;
 }
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active{
+  color: #D20200;         /* rood */
+  outline: none;
+}
+
 
 /* =========================
    HOMEPAGE: hide big title
