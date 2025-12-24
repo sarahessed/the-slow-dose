@@ -1,16 +1,10 @@
-/* =========================
-   PIEN-STYLE CSS (IDENTICAL FEEL)
-   - Body = Helvetica (zoals Pien: --FONT-STACK-BODY)
-   - Headings = jouw Neue Haas Display Roman
-   - Tracking/line-height aangepast naar Pien-achtig
-========================= */
 
 /* =========================
    TOPBAR
 ========================= */
 .topbar {
   background: #0064fa;
-  height: 15px;
+  height: 20px;
   width: 100%;
 }
 
