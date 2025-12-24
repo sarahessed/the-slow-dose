@@ -21,6 +21,8 @@
   font-style: normal;
   font-display: swap;
 }
+<meta name="theme-color" content="#F6BDC8">
+<meta name="msapplication-TileColor" content="#F6BDC8">
 
 /* =========================
    BASE VARIABLES
@@ -321,4 +323,13 @@ footer a {
 ::-moz-selection {
   background: #D20200;
   color: #000;
+}
+
+/* forceer roze behind-the-page bij overscroll */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: #F6BDC8;
+  z-index: -1;
 }
