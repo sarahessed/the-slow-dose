@@ -116,6 +116,20 @@ h4 {
   text-align: center;
 }
 
+<header class="site-header">
+  <nav class="nav-inner">
+    <div class="nav-left"></div>
+
+    <div class="nav-center">
+      <a href="/" class="logo">THE SLOW DOSE</a>
+    </div>
+
+    <div class="nav-right">
+      <a href="/about.html" class="nav-link">About</a>
+    </div>
+  </nav>
+</header>
+
 /* =========================
    LINKS
 ========================= */
