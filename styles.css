@@ -1,61 +1,102 @@
- .topbar {
+/* =========================
+   TOPBAR
+========================= */
+.topbar {
     background: #0064fa;
     height: 15px;
     width: 100%;
 }
 
+/* =========================
+   FONT
+========================= */
 @font-face {
-  font-family: "Neue Haas Display";
-  src: url("fonts/NeueHaasDisplayRoman.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Neue Haas Display";
+    src: url("fonts/NeueHaasDisplayRoman.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
-
-body {
-  font-family: "Neue Haas Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.005em;
-}
-
-h1, h2, h3 {
-  font-family: "Neue Haas Display", sans-serif;
-  font-weight: 900;
-  letter-spacing: 0.02em;
-}
-
-
+/* =========================
+   RESET / LAYOUT
+========================= */
 html, body {
     margin: 0;
     padding: 0;
-   font-family: "Neue Haas Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 18px;
-    line-height: 1.55;         /* fijne leesbaarheid */
-    letter-spacing: -0.01em;   /* iets compacter, squeeze effect */
+    line-height: 1.55;
     background: white;
     color: #000;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-
-html {
-    scroll-behavior: smooth;
-    overflow-y: scroll;
+/* =========================
+   BODY TEXT
+========================= */
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.005em;
 }
-.home-link {
-    display: inline-block;
-    position: relative;
-    top: 5px;
-    left: 0;
-    margin-bottom: 0;
+
+/* =========================
+   HEADINGS
+========================= */
+h1, h2, h3, h4 {
+    font-family: "Neue Haas Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 1px;
+    text-align: left;
+}
+
+h2 {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 60px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+h4 {
+    font-size: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* =========================
+   LINKS / NAV
+========================= */
+a {
+    color: black;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: black;
+}
+
+.home-link,
+.top-link,
+.sound-control a {
     font-size: 1rem;
-    font-weight: normal;
+    font-weight: 400;
     text-decoration: underline;
     color: black;
 }
@@ -74,19 +115,14 @@ html {
     margin-top: 20px;
 }
 
-.top-link {
-    text-decoration: underline;
-    color: black;
-    font-size: 1rem;
-    font-weight: normal;
-}
-
+/* =========================
+   CONTAINERS
+========================= */
 .container {
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0 20px;
-    padding-bottom: 20px;
+    padding: 0 20px 20px;
     flex: 1;
 }
 
@@ -97,57 +133,32 @@ html {
     padding-bottom: 10px;
 }
 
+/* =========================
+   SOUND CONTROL
+========================= */
 .sound-control {
     position: absolute;
     top: 35px;
     left: -150px;
 }
 
-.sound-control a {
-    text-decoration: underline;
-    color: black;
-    font-size: 1rem;
-    font-weight: normal;
-}
-
-h1 {
-    font-size: 40px;
-    font-weight: normal;
-    margin-bottom: 1px;
-    text-align: left;
-}
-
-h2 {
-    font-weight: normal; /* Maakt het niet vet */
-    font-size: 1.25rem;  /* Of een andere gewenste grootte */
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-h3 {
-    font-size: 60px;
-    font-weight: normal;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-h4 {
-    font-size: 20px;
-    font-weight: normal;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-ol li, ul li {
+/* =========================
+   LISTS
+========================= */
+ol li,
+ul li {
     margin-bottom: 10px;
 }
 
+/* =========================
+   GRID
+========================= */
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* exactly 3 columns */
-    gap: 0;
+    grid-template-columns: repeat(3, 1fr);
     width: 100%;
     max-width: 1000px;
+    gap: 0;
 }
 
 .grid a img {
@@ -162,6 +173,9 @@ ol li, ul li {
     transform: scale(1.05);
 }
 
+/* =========================
+   FOOTER
+========================= */
 footer {
     background: #39FF14;
     color: white;
@@ -174,22 +188,14 @@ footer {
     box-sizing: border-box;
 }
 
-
 footer a {
     color: white;
     text-decoration: underline;
 }
 
-a {
-    color: black;
-    text-decoration: underline;
-}
-
-a:hover {
-    color: black;
-}
-
-/* Media query voor mobiele schermen */
+/* =========================
+   MEDIA QUERIES
+========================= */
 @media (max-width: 900px) {
     .sound-control {
         position: relative;
@@ -198,10 +204,10 @@ a:hover {
         margin-bottom: 20px;
     }
 }
+
 @media (max-width: 600px) {
     .grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 0; /* zorg dat afbeeldingen elkaar raken */
         padding: 0;
     }
 
@@ -210,17 +216,17 @@ a:hover {
         height: auto;
         object-fit: cover;
     }
-
-    /* h3 niet aanpassen hier */
 }
 
-/* Tekst selectie */
+/* =========================
+   TEXT SELECTION
+========================= */
 ::selection {
-    background: #ff00ff; /* dezelfde blauw als topbar */
-    color: black;        /* tekstkleur tijdens selectie */
+    background: #ff00ff;
+    color: black;
 }
 
 ::-moz-selection {
-    background: #ff00ff; /* voor Firefox */
+    background: #ff00ff;
     color: black;
 }
