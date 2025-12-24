@@ -159,19 +159,12 @@ a:hover {
 .logo{
   font-family: var(--font-heading);
   font-weight: 400;
-
-  /* responsive size: desktop groot, mobiel kleiner */
-  font-size: clamp(36px, 7vw, 64px);
-
+  font-size: 64px;
   letter-spacing: 0.04em;
+  text-decoration: none;
   color: #fff;
   text-transform: uppercase;
-  line-height: 1;
-
-  white-space: nowrap;     /* NOOIT afbreken */
-  display: inline-block;
 }
-
 
 .nav-right{
   text-align: right;
@@ -422,4 +415,3 @@ footer{
   background: #D20200;
   color: #000;
 }
-
