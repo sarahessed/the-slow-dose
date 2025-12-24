@@ -1,34 +1,5 @@
 /* =========================
-   TOPBAR (HOME ONLY)
-========================= */
-.topbar{
-  background: transparent;
-  height: var(--topbar-height);
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-}
-
-
-:root{
-  --topbar-height: 28px; /* was 20px */
-}
-
-/* =========================
-   FONT
-========================= */
-@font-face{
-  font-family: "Neue Haas Display";
-  src: url("fonts/NeueHaasDisplayRoman.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* =========================
-   VARIABLES
+   VARIABLES (ONE SOURCE)
 ========================= */
 :root{
   --font-body: Helvetica, Arial, sans-serif;
@@ -45,9 +16,19 @@
 
   --accent-red: #D20200;
 
-  /* layout tokens */
-  --topbar-height: 20px;
+  --topbar-height: 28px;
   --header-height: 88px;
+}
+
+/* =========================
+   FONT
+========================= */
+@font-face{
+  font-family: "Neue Haas Display";
+  src: url("fonts/NeueHaasDisplayRoman.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* =========================
@@ -71,54 +52,34 @@ body{
   font-family: var(--font-body);
   font-size: var(--body-size);
   line-height: var(--lh-body);
-  background: #F4E7C6; /* home default */
+  background: #F4E7C6;
   color: #000;
 }
 
 /* =========================
-   HEADINGS
+   TOPBAR (HOME)
 ========================= */
-h1, h2, h3, h4{
-  font-family: var(--font-heading);
-  font-weight: 400;
-  line-height: var(--lh-heading);
-  margin: 0 0 0.6em 0;
-}
-
-h1{ font-size: 40px; }
-h2{ font-size: 1.25rem; }
-h3{ font-size: 60px; text-align: center; }
-h4{ font-size: 20px; text-align: center; }
-
-/* =========================
-   LINKS (GLOBAL)
-========================= */
-a{
-  color: inherit;
-  text-decoration: underline;
-}
-
-a:hover,
-a:focus,
-a:active{
-  color: var(--accent-red);
+.topbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--topbar-height);
+  background: transparent;
+  z-index: 9999;
 }
 
 /* =========================
-   HEADER / NAV (ONE SOURCE OF TRUTH)
+   HEADER / NAV
 ========================= */
 .site-header{
   position: fixed;
-  top: var(--topbar-height); /* sits under topbar on home */
+  top: 0;
   left: 0;
   width: 100%;
   height: var(--header-height);
   z-index: 9998;
-  background: transparent; /* home is transparent */
-}
-
-body.home .site-header{
-  top: 0;
+  background: transparent;
 }
 
 .nav-inner{
@@ -134,7 +95,9 @@ body.home .site-header{
 .nav-center{ text-align: center; }
 .nav-right{ text-align: right; }
 
-/* LOGO — clickable, NO underline ever */
+/* =========================
+   LOGO & NAV LINKS
+========================= */
 .logo,
 .logo:link,
 .logo:visited,
@@ -145,93 +108,59 @@ body.home .site-header{
   font-size: clamp(22px, 4.6vw, 64px);
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #fff;                 /* home default */
+  color: #fff;
   text-decoration: none !important;
   white-space: nowrap;
 }
 
-/* ABOUT link */
 .nav-link{
   font-family: var(--font-body);
   font-size: 22px;
-  color: #fff;                 /* home default */
+  color: #fff;
   text-decoration: none;
   text-transform: lowercase;
-  -webkit-tap-highlight-color: transparent;
 }
 
-.nav-link:hover,
-.nav-link:focus,
-.nav-link:active{
-  color: var(--accent-red);
-  outline: none;
-}
+.nav-link:hover{ color: var(--accent-red); }
 
 /* =========================
-   HIDE BIG TITLE ON HOME
-========================= */
-.home h3,
-.home h4{
-  display: none;
-}
-
-/* =========================
-   CONTAINER (ONE SOURCE OF TRUTH)
+   CONTAINER
 ========================= */
 .container{
   max-width: 1000px;
   margin: 0 auto;
-  padding: calc(var(--topbar-height) + var(--header-height) + 40px)
+  padding: calc(var(--header-height) + 40px)
            var(--page-padding-x)
            var(--page-padding-bottom);
 }
-body.home .container{
-  padding-top: calc(var(--header-height) + 40px);
-}
-
-/* Article text column */
-.container.left{
-  max-width: 820px;
-  margin: 0 auto;
-  line-height: 1.75;
-}
-
-.container.left p{
-  margin: 0 0 1.25em 0;
-}
 
 /* =========================
-   SOUND CONTROL
+   SOUND CONTROL (BLACK)
 ========================= */
 .sound-control{
   position: fixed;
-  top: calc(var(--topbar-height) + 60px);
+  top: calc(var(--header-height) + 20px);
   left: 20px;
   z-index: 9997;
 }
 
 .sound-control a{
-  color: #fff;
+  color: #000;
   text-decoration: none;
   display: inline-flex;
   gap: 10px;
   align-items: center;
-  -webkit-tap-highlight-color: transparent;
 }
 
-/* Desktop: allow glyphs to show */
-#sound-icon{
-  font-family: var(--font-body);
-}
+#sound-icon{ font-family: var(--font-body); }
 
-/* Mobile Safari: SVG mask icon, no emoji */
 @media (max-width: 600px){
   #sound-icon{
     width: 16px;
     height: 16px;
-    background: #fff;
+    background: #000;
     display: inline-block;
-    font-size: 0; /* hides emoji glyph */
+    font-size: 0;
     line-height: 0;
     -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M5 3.2v9.6L13 8 5 3.2z'/%3E%3C/svg%3E") no-repeat center / contain;
             mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M5 3.2v9.6L13 8 5 3.2z'/%3E%3C/svg%3E") no-repeat center / contain;
@@ -244,36 +173,39 @@ body.home .container{
 }
 
 /* =========================
-   HOMEPAGE SEQUENCE (images)
+   HOMEPAGE TAGLINE
+========================= */
+.home .home-tagline{
+  margin: 0 0 30px 0;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+/* =========================
+   HOMEPAGE IMAGES
 ========================= */
 .homepage-sequence{
   width: 100%;
   max-width: 1100px;
-  margin: 0 auto;
+  margin: 60px auto 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15rem;
 }
 
-.img-group-small{ width: 30%; }
-.img-group-big{ width: 45%; }
-.img-group-double{ width: 80%; }
+.img-group-small,
+.img-group-big,
+.img-group-double{
+  width: 80%;
+}
 
 .homepage-sequence img{
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
-  transition: transform .25s ease;
-}
-
-.homepage-sequence a:hover img{
-  transform: scale(1.03);
-}
-
-@media (min-width: 900px){
-  .homepage-sequence{ margin-top: 60px; }
 }
 
 /* =========================
@@ -283,160 +215,58 @@ footer{
   background: var(--accent-red);
   color: #000;
   padding: 80px 20px;
-  min-height: 140px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
-}
-
-footer a{
-  color: inherit;
-  text-decoration: none;
 }
 
 /* =========================
-   ARTICLE PAGE OVERRIDES
-========================= */
-body.article{
-  background: #C1C1CB;
-}
-
-/* remove pink topbar on article */
-body.article .topbar{
-  display: none;
-}
-
-/* article header: solid gray block at top */
-body.article .site-header{
-  top: 0;
-  background: #C1C1CB;
-}
-
-/* article container: no topbar offset */
-body.article .container{
-  padding-top: calc(var(--header-height) + 40px);
-}
-
-/* logo + about black on articles */
-body.article .logo,
-body.article .nav-link{
-  color: #000;
-}
-
-/* =========================
-   ABOUT PAGE OVERRIDES
+   ABOUT
 ========================= */
 body.about{
   background: #F6BDC8;
   color: #fff;
 }
 
-body.about .topbar{
-  display: none;
-}
+body.about .topbar{ display:none; }
 
 body.about .site-header{
-  top: 0;
-  background: #F6BDC8; /* solid block */
+  background: #F6BDC8;
 }
 
-body.about .container{
-  padding-top: calc(var(--header-height) + 40px);
-}
-
-/* logo + about white on about */
 body.about .logo,
-body.about .nav-link{
-  color: #fff;
-}
+body.about .nav-link{ color:#fff; }
 
-/* optional spacer under about text (add <div class="about-spacer"></div>) */
-.about-spacer{
-  height: 200px; /* adjust 160–260px */
-}
+.about-spacer{ height:600px; }
 
 /* =========================
-   TOP LINK (article bottom)
+   ARTICLE
 ========================= */
-.top-link{
-  text-transform: lowercase;
-  text-decoration: none;
+body.article{
+  background: #C1C1CB;
 }
 
-.top-link:hover,
-.top-link:focus,
-.top-link:active{
-  color: var(--accent-red);
+body.article .topbar{ display:none; }
+
+body.article .site-header{
+  background:#C1C1CB;
 }
+
+body.article .logo,
+body.article .nav-link{ color:#000; }
 
 /* =========================
    MOBILE
 ========================= */
-@media (max-width: 600px){
-  body{
-    font-size: var(--body-size-mobile);
-  }
-
-  .logo{
-    font-size: 24px;
-  }
-
-  .nav-link{
-    font-size: 16px;
-  }
-
-  /* images full width on mobile */
-  .img-group-small,
-  .img-group-big,
-  .img-group-double{
-    width: 100%;
-  }
-
-  .homepage-sequence{
-    gap: 7rem;
-  }
-
-  footer{
-    flex-direction: column;
-    gap: 24px;
-  }
+@media (max-width:600px){
+  body{ font-size: var(--body-size-mobile); }
+  .logo{ font-size:24px; }
+  .nav-link{ font-size:16px; }
+  .homepage-sequence{ gap:7rem; }
+  footer{ flex-direction:column; gap:24px; }
 }
 
 /* =========================
    SELECTION
 ========================= */
-::selection{
-  background: var(--accent-red);
-  color: #000;
-}
-::-moz-selection{
-  background: var(--accent-red);
-  color: #000;
-}
-/* =========================
-   HOMEPAGE TAGLINE (WHITE, ABOVE IMAGE)
-========================= */
-.home .home-tagline{
-  margin: 0 0 30px 0;
-  text-align: center;
-  color: #fff;
-  font-family: var(--font-body);
-  font-size: 22px;
-  line-height: 1.4;
-}
-
-/* mobile: slightly smaller */
-@media (max-width: 600px){
-  .home .home-tagline{
-    font-size: 19px;
-    margin-bottom: 22px;
-  }
-}
-
-/* =========================
-   ABOUT PAGE: extra pink space before footer
-========================= */
-.about-spacer{
-  height: 600px; /* adjust if you want more/less */
-}
+::selection{ background: var(--accent-red); color:#000; }
+::-moz-selection{ background: var(--accent-red); color:#000; }
