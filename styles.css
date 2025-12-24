@@ -4,10 +4,19 @@
     width: 100%;
 }
 
+@font-face {
+    font-family: "Neue Haas Display";
+    src: url("/fonts/NeueHaasDisplayBlack.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 html, body {
     margin: 0;
     padding: 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-family: "Neue Haas Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 18px;
     line-height: 1.55;         /* fijne leesbaarheid */
     letter-spacing: -0.01em;   /* iets compacter, squeeze effect */
@@ -87,6 +96,10 @@ html {
     font-size: 1rem;
     font-weight: normal;
 }
+
+h1, h2, h3, h4 {
+    font-family: "Neue Haas Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 900;
 
 h1 {
     font-size: 40px;
