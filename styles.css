@@ -1,7 +1,7 @@
 /* =========================
    TOPBAR (HOME ONLY)
 ========================= */
-.topbar {
+.topbar{
   background: #F6BDC8;
   height: 20px;
   width: 100%;
@@ -14,7 +14,7 @@
 /* =========================
    FONT
 ========================= */
-@font-face {
+@font-face{
   font-family: "Neue Haas Display";
   src: url("fonts/NeueHaasDisplayRoman.ttf") format("truetype");
   font-weight: 400;
@@ -25,7 +25,7 @@
 /* =========================
    VARIABLES
 ========================= */
-:root {
+:root{
   --font-body: Helvetica, Arial, sans-serif;
   --font-heading: "Neue Haas Display", Helvetica, Arial, sans-serif;
 
@@ -39,82 +39,91 @@
   --page-padding-bottom: 20px;
 
   --accent-red: #D20200;
+
+  /* layout tokens */
+  --topbar-height: 20px;
+  --header-height: 88px;
 }
 
 /* =========================
    RESET
 ========================= */
-html, body {
+*{ box-sizing: border-box; }
+
+html, body{
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  box-sizing: border-box;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* =========================
    BODY
 ========================= */
-body {
+body{
   font-family: var(--font-body);
   font-size: var(--body-size);
   line-height: var(--lh-body);
-  background: #F4E7C6;
+  background: #F4E7C6; /* home default */
   color: #000;
 }
 
 /* =========================
    HEADINGS
 ========================= */
-h1, h2, h3, h4 {
+h1, h2, h3, h4{
   font-family: var(--font-heading);
   font-weight: 400;
   line-height: var(--lh-heading);
+  margin: 0 0 0.6em 0;
 }
 
-h1 { font-size: 40px; }
-h2 { font-size: 1.25rem; }
-h3 { font-size: 60px; text-align: center; }
-h4 { font-size: 20px; text-align: center; }
+h1{ font-size: 40px; }
+h2{ font-size: 1.25rem; }
+h3{ font-size: 60px; text-align: center; }
+h4{ font-size: 20px; text-align: center; }
 
 /* =========================
    LINKS (GLOBAL)
 ========================= */
-a {
+a{
   color: inherit;
   text-decoration: underline;
 }
 
 a:hover,
 a:focus,
-a:active {
+a:active{
   color: var(--accent-red);
 }
 
 /* =========================
-   HEADER / NAV
+   HEADER / NAV (ONE SOURCE OF TRUTH)
 ========================= */
 .site-header{
   position: fixed;
-  top: 20px;
+  top: var(--topbar-height); /* sits under topbar on home */
+  left: 0;
   width: 100%;
+  height: var(--header-height);
   z-index: 9998;
-  background: transparent;
+  background: transparent; /* home is transparent */
 }
 
 .nav-inner{
   max-width: 1000px;
+  height: 100%;
   margin: 0 auto;
-  padding: 16px var(--page-padding-x);
+  padding: 0 var(--page-padding-x);
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
 }
 
-.nav-center{
-  text-align: center;
-}
+.nav-center{ text-align: center; }
+.nav-right{ text-align: right; }
 
 /* LOGO — clickable, NO underline ever */
 .logo,
@@ -127,37 +136,48 @@ a:active {
   font-size: clamp(22px, 4.6vw, 64px);
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #fff;
+  color: #fff;                 /* home default */
   text-decoration: none !important;
   white-space: nowrap;
 }
 
-/* ABOUT */
-.nav-right{
-  text-align: right;
-}
-
+/* ABOUT link */
 .nav-link{
+  font-family: var(--font-body);
   font-size: 22px;
-  color: #fff;
+  color: #fff;                 /* home default */
   text-decoration: none;
   text-transform: lowercase;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.nav-link:hover{
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active{
   color: var(--accent-red);
+  outline: none;
 }
 
 /* =========================
-   CONTAINERS
+   HIDE BIG TITLE ON HOME
+========================= */
+.home h3,
+.home h4{
+  display: none;
+}
+
+/* =========================
+   CONTAINER (ONE SOURCE OF TRUTH)
 ========================= */
 .container{
   max-width: 1000px;
   margin: 0 auto;
-  padding: 120px var(--page-padding-x) var(--page-padding-bottom);
+  padding: calc(var(--topbar-height) + var(--header-height) + 40px)
+           var(--page-padding-x)
+           var(--page-padding-bottom);
 }
 
-/* ARTICLE TEXT */
+/* Article text column */
 .container.left{
   max-width: 820px;
   margin: 0 auto;
@@ -165,7 +185,7 @@ a:active {
 }
 
 .container.left p{
-  margin-bottom: 1.25em;
+  margin: 0 0 1.25em 0;
 }
 
 /* =========================
@@ -173,8 +193,9 @@ a:active {
 ========================= */
 .sound-control{
   position: fixed;
-  top: 80px;
+  top: calc(var(--topbar-height) + 60px);
   left: 20px;
+  z-index: 9997;
 }
 
 .sound-control a{
@@ -183,16 +204,23 @@ a:active {
   display: inline-flex;
   gap: 10px;
   align-items: center;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* MOBILE ICON (SVG, NO EMOJI) */
+/* Desktop: allow glyphs to show */
+#sound-icon{
+  font-family: var(--font-body);
+}
+
+/* Mobile Safari: SVG mask icon, no emoji */
 @media (max-width: 600px){
   #sound-icon{
     width: 16px;
     height: 16px;
     background: #fff;
     display: inline-block;
-    font-size: 0;
+    font-size: 0; /* hides emoji glyph */
+    line-height: 0;
     -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M5 3.2v9.6L13 8 5 3.2z'/%3E%3C/svg%3E") no-repeat center / contain;
             mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M5 3.2v9.6L13 8 5 3.2z'/%3E%3C/svg%3E") no-repeat center / contain;
   }
@@ -204,13 +232,50 @@ a:active {
 }
 
 /* =========================
+   HOMEPAGE SEQUENCE (images)
+========================= */
+.homepage-sequence{
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15rem;
+}
+
+.img-group-small{ width: 30%; }
+.img-group-big{ width: 45%; }
+.img-group-double{ width: 80%; }
+
+.homepage-sequence img{
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform .25s ease;
+}
+
+.homepage-sequence a:hover img{
+  transform: scale(1.03);
+}
+
+@media (min-width: 900px){
+  .homepage-sequence{ margin-top: 60px; }
+}
+
+/* =========================
    FOOTER
 ========================= */
 footer{
   background: var(--accent-red);
+  color: #000;
   padding: 80px 20px;
+  min-height: 140px;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
 }
 
 footer a{
@@ -225,14 +290,20 @@ body.article{
   background: #C1C1CB;
 }
 
-/* remove pink bar */
+/* remove pink topbar on article */
 body.article .topbar{
   display: none;
 }
 
-/* header background solid gray */
+/* article header: solid gray block at top */
 body.article .site-header{
+  top: 0;
   background: #C1C1CB;
+}
+
+/* article container: no topbar offset */
+body.article .container{
+  padding-top: calc(var(--header-height) + 40px);
 }
 
 /* logo + about black on articles */
@@ -241,13 +312,49 @@ body.article .nav-link{
   color: #000;
 }
 
-/* TOP link */
+/* =========================
+   ABOUT PAGE OVERRIDES
+========================= */
+body.about{
+  background: #F6BDC8;
+  color: #fff;
+}
+
+body.about .topbar{
+  display: none;
+}
+
+body.about .site-header{
+  top: 0;
+  background: #F6BDC8; /* solid block */
+}
+
+body.about .container{
+  padding-top: calc(var(--header-height) + 40px);
+}
+
+/* logo + about white on about */
+body.about .logo,
+body.about .nav-link{
+  color: #fff;
+}
+
+/* optional spacer under about text (add <div class="about-spacer"></div>) */
+.about-spacer{
+  height: 200px; /* adjust 160–260px */
+}
+
+/* =========================
+   TOP LINK (article bottom)
+========================= */
 .top-link{
   text-transform: lowercase;
   text-decoration: none;
 }
 
-.top-link:hover{
+.top-link:hover,
+.top-link:focus,
+.top-link:active{
   color: var(--accent-red);
 }
 
@@ -267,6 +374,17 @@ body.article .nav-link{
     font-size: 16px;
   }
 
+  /* images full width on mobile */
+  .img-group-small,
+  .img-group-big,
+  .img-group-double{
+    width: 100%;
+  }
+
+  .homepage-sequence{
+    gap: 7rem;
+  }
+
   footer{
     flex-direction: column;
     gap: 24px;
@@ -280,97 +398,7 @@ body.article .nav-link{
   background: var(--accent-red);
   color: #000;
 }
-
-/* =========================
-   FIXED HEADER AS REAL BLOCK
-   (prevents content showing "above" header when scrolling)
-========================= */
-.site-header{
-  position: fixed;
-  left: 0;
-  top: 0;                 /* header owns the very top */
-  width: 100%;
-  z-index: 9998;
+::-moz-selection{
+  background: var(--accent-red);
+  color: #000;
 }
-
-/* keep your topbar visually on top if you use it on home */
-.topbar{
-  z-index: 9999;
-}
-
-/* header height + spacing token */
-:root{
-  --header-height: 88px;  /* adjust if you want */
-  --topbar-height: 20px;
-}
-
-/* nav area has a fixed height so it becomes a "solid block" */
-.nav-inner{
-  min-height: var(--header-height);
-  display: grid;
-  align-items: center;
-}
-
-/* push page content BELOW the header block */
-.container{
-  padding-top: calc(var(--header-height) + var(--topbar-height) + 20px);
-}
-
-/* On pages where topbar is hidden (article/about), we reduce spacing */
-body.article .container,
-body.about .container{
-  padding-top: calc(var(--header-height) + 24px);
-}
-
-/* =========================
-   ABOUT PAGE THEME
-========================= */
-body.about{
-  background: #F6BDC8;
-  color: #fff;
-}
-
-/* hide topbar on about */
-body.about .topbar{
-  display: none;
-}
-
-/* header background = solid pink block */
-body.about .site-header{
-  background: #F6BDC8;
-}
-
-/* logo + about link white */
-body.about .logo,
-body.about .nav-link{
-  color: #fff;
-}
-
-/* clickable = red on hover/focus/active */
-body.about a:hover,
-body.about a:focus,
-body.about a:active{
-  color: #D20200;
-}
-
-/* ensure logo never underlined */
-.logo,
-.logo:link,
-.logo:visited,
-.logo:hover,
-.logo:focus,
-.logo:active{
-  text-decoration: none !important;
-}
-
-/* About page body links: look like text (still clickable) */
-body.about .container a{
-  text-decoration: none;
-}
-
-/* Footer on about: keep it readable (still red block) */
-body.about footer{
-  color: #000;            /* optional: keeps footer readable on red */
-}
-
-
