@@ -221,11 +221,14 @@ body.home .home-tagline{
   align-items: center;
   gap: 15rem;
 }
-
+/* =========================
+   HOMEPAGE IMAGE SCALE (DESKTOP)
+========================= */
 .img-group-small,
 .img-group-big,
 .img-group-double{
-  width: 80%;
+  width: 100%;
+  max-width: 520px;  
 }
 
 .homepage-sequence img{
