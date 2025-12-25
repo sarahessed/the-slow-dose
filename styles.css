@@ -357,3 +357,17 @@ body.about .nav-link{
 ========================= */
 ::selection{ background: var(--accent-red); color: #000; }
 ::-moz-selection{ background: var(--accent-red); color: #000; }
+
+/* =========================
+   ARTICLE IMAGES (between paragraphs)
+========================= */
+.article-figure{
+  margin: 18px 0 22px 0;  /* space like Annie's article */
+}
+
+.article-img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
