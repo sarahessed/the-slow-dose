@@ -90,25 +90,24 @@
     </div>
   </footer>
 
-  <script>
-    function toggleSound() {
-      var audio = document.getElementById("soothing-audio");
-      var link = document.getElementById("sound-link");
-      var icon = document.getElementById("sound-icon");
-      var text = document.getElementById("sound-text");
+    <script>
+  function toggleSound() {
+    var audio = document.getElementById("soothing-audio");
+    var link = document.getElementById("sound-link");
+    var text = document.getElementById("sound-text");
 
-      if (audio.paused) {
-        audio.play();
-        link.classList.add("is-playing");
-        icon.textContent = "❚❚";
-        text.textContent = "Pause";
-      } else {
-        audio.pause();
-        link.classList.remove("is-playing");
-        icon.textContent = "▶";
-        text.textContent = "Play soothing sounds";
-      }
+    if (audio.paused) {
+      audio.play();
+      link.classList.add("is-playing");
+      text.textContent = "Pause";
+    } else {
+      audio.pause();
+      link.classList.remove("is-playing");
+      text.textContent = "Play soothing sounds";
     }
+  }
+</script>
+
   </script>
 
 </body>
