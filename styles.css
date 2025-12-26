@@ -230,6 +230,29 @@ body.home .home-tagline{
 #sound-icon{ font-family: var(--font-body); }
 
 /* =========================
+   SOUND ICON — FORCE NON-EMOJI (CSS ICON)
+========================= */
+#sound-icon{
+  width: 16px;
+  height: 16px;
+  background: #000;
+  display: inline-block;
+  font-size: 0;      /* prevents glyph rendering */
+  line-height: 0;
+  flex: 0 0 auto;
+
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M5 3.2v9.6L13 8 5 3.2z'/%3E%3C/svg%3E") no-repeat center / contain;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M5 3.2v9.6L13 8 5 3.2z'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+/* when playing: show pause icon */
+#sound-link.is-playing #sound-icon{
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M4 3h3v10H4V3zm5 0h3v10H9V3z'/%3E%3C/svg%3E") no-repeat center / contain;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M4 3h3v10H4V3zm5 0h3v10H9V3z'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+
+/* =========================
    HOMEPAGE IMAGES — STYLE (1 then 2)
 ========================= */
 .homepage-sequence{
