@@ -311,7 +311,7 @@ body.article{
   background: #BDBFCB;
 }
 html:has(body.article){
-  background: #B6BDC8;
+  background: #BDBFCB;
 }
 
 body.article .topbar{ display: none; }
