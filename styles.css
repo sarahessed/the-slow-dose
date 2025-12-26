@@ -31,10 +31,10 @@
   --header-height: 88px;
 
   /* HOME GRID (PIEN STYLE) */
-  --tile-width: 460px;       /* maak kleiner als 520 voor “rustiger” */
-  --double-gap: 80px;        /* ruimte tussen de 2 tiles */
-  --stack-gap: 10rem;        /* verticale afstand tussen rijen */
-  --space-after-images: 140px; /* witruimte vóór footer */
+  --tile-width: 460px;
+  --double-gap: 80px;
+  --stack-gap: 10rem;
+  --space-after-images: 140px;
 }
 
 /* =========================
@@ -45,21 +45,41 @@
 html, body{
   margin: 0;
   padding: 0;
-  min-height: 100vh;
+  height: 100%;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* IMPORTANT: set html bg too (prevents Safari “white strip” / rubber-band) */
+html{
+  background: #F4E7C6;
+}
+
 /* =========================
-   BASE
+   BASE LAYOUT (sticky footer)
 ========================= */
 body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
   font-family: var(--font-body);
   font-size: var(--body-size);
   line-height: var(--lh-body);
+
   background: #F4E7C6; /* home default */
   color: #000;
+}
+
+/* page content should expand and push footer down */
+.container{
+  flex: 1 0 auto;
+}
+
+/* footer should never shrink */
+footer{
+  flex-shrink: 0;
 }
 
 /* =========================
@@ -74,7 +94,7 @@ figcaption{
   text-transform: lowercase;
 }
 
-/* LINKS: black, no underline (everywhere) */
+/* LINKS */
 a{
   color: #000;
   text-decoration: none;
@@ -125,7 +145,7 @@ a:active{
 .nav-center{ text-align: center; }
 .nav-right{ text-align: right; }
 
-/* LOGO — never underline */
+/* LOGO */
 .logo,
 .logo:link,
 .logo:visited,
@@ -136,23 +156,23 @@ a:active{
   font-size: clamp(22px, 4.6vw, 64px);
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #fff;                 /* home */
+  color: #fff; /* home */
   text-decoration: none !important;
   white-space: nowrap;
 }
 
-/* NAV LINK (about) */
+/* NAV LINK */
 .nav-link{
   font-family: var(--font-body);
   font-size: 22px;
-  color: #fff;                 /* home */
+  color: #fff; /* home */
   text-decoration: none !important;
   text-transform: lowercase;
   -webkit-tap-highlight-color: transparent;
 }
 
 /* =========================
-   CONTAINER
+   CONTAINER SPACING
 ========================= */
 .container{
   max-width: 1000px;
@@ -167,21 +187,18 @@ body.home .container{
   padding-bottom: var(--space-after-images);
 }
 
-/* =========================
-   HOMEPAGE: remove the extra black title/text
-========================= */
+/* remove accidental home texts */
 body.home .container > h1,
 body.home .container > h2,
 body.home .container > h3,
 body.home .container > h4{
   display: none !important;
 }
-
 body.home .container > p:not(.home-tagline){
   display: none !important;
 }
 
-/* homepage tagline (white, centered) */
+/* homepage tagline */
 body.home .home-tagline{
   margin: 40px 0 30px 0;
   text-align: center;
@@ -212,30 +229,9 @@ body.home .home-tagline{
 
 #sound-icon{ font-family: var(--font-body); }
 
-/* Mobile Safari icon swap */
-@media (max-width: 600px){
-  #sound-icon{
-    width: 16px;
-    height: 16px;
-    background: #000;
-    display: inline-block;
-    font-size: 0;
-    line-height: 0;
-    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M5 3.2v9.6L13 8 5 3.2z'/%3E%3C/svg%3E") no-repeat center / contain;
-            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M5 3.2v9.6L13 8 5 3.2z'/%3E%3C/svg%3E") no-repeat center / contain;
-  }
-
-  #sound-link.is-playing #sound-icon{
-    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M4 3h3v10H4V3zm5 0h3v10H9V3z'/%3E%3C/svg%3E") no-repeat center / contain;
-            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M4 3h3v10H4V3zm5 0h3v10H9V3z'/%3E%3C/svg%3E") no-repeat center / contain;
-  }
-}
-
 /* =========================
-   HOMEPAGE IMAGES —  STYLE (1 then 2)
+   HOMEPAGE IMAGES — STYLE (1 then 2)
 ========================= */
-
-/* stack container */
 .homepage-sequence{
   width: 100%;
   margin: 60px auto 0;
@@ -245,14 +241,12 @@ body.home .home-tagline{
   gap: var(--stack-gap);
 }
 
-/* single tile (centered) */
 .img-group-small{
   width: 100%;
   max-width: var(--tile-width);
   margin: 0 auto;
 }
 
-/* double row: wide enough for 2 tiles + gap, centered */
 .img-group-double{
   width: 100%;
   max-width: calc((2 * var(--tile-width)) + var(--double-gap));
@@ -260,7 +254,7 @@ body.home .home-tagline{
   display: grid;
   grid-template-columns: var(--tile-width) var(--tile-width);
   gap: var(--double-gap);
-  justify-content: center; /* centers the two tiles */
+  justify-content: center;
 }
 
 /* images */
@@ -277,14 +271,10 @@ body.home .home-tagline{
 }
 
 /* =========================
-   FOOTER — ALWAYS FULL WIDTH
+   FOOTER — FULL WIDTH (no 100vw hack)
 ========================= */
 footer{
-  /* FULL BLEED, even if footer is accidentally inside a centered container */
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-
+  width: 100%;
   background: var(--accent-red);
   color: #000;
   padding: 140px 20px;
@@ -295,23 +285,9 @@ footer{
   gap: 16px;
 }
 
-
 footer a{
   color: #000;
   text-decoration: none !important;
-}
-
-html, body{
-  height: 100%;
-}
-
-body{
-  display: flex;
-  flex-direction: column;
-}
-
-footer{
-  margin-top: auto;
 }
 
 /* =========================
@@ -320,19 +296,18 @@ footer{
 body.article{
   background: #C1C1CB;
 }
-
-body.article .topbar{ display: none; }
-
-body.article .site-header{
+html:has(body.article){
   background: #C1C1CB;
 }
+
+body.article .topbar{ display: none; }
+body.article .site-header{ background: #C1C1CB; }
 
 body.article .logo,
 body.article .nav-link{
   color: #000;
 }
 
-/* "top" link at bottom */
 .top-link,
 .top-link:link,
 .top-link:visited,
@@ -356,12 +331,12 @@ body.about{
   background: #F6BDC8;
   color: #fff;
 }
-
-body.about .topbar{ display: none; }
-
-body.about .site-header{
+html:has(body.about){
   background: #F6BDC8;
 }
+
+body.about .topbar{ display: none; }
+body.about .site-header{ background: #F6BDC8; }
 
 body.about .logo,
 body.about .nav-link{
@@ -369,6 +344,35 @@ body.about .nav-link{
 }
 
 .about-spacer{ height: 600px; }
+
+/* =========================
+   ARTICLE IMAGES
+========================= */
+.article-figure{
+  margin: 40px 0 56px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.article-img{
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+}
+
+/* =========================
+   HEADINGS — PIEN STYLE H1
+========================= */
+h1{
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.3;
+  letter-spacing: 0em;
+  text-transform: lowercase;
+  margin: 0 0 40px 0;
+}
 
 /* =========================
    MOBILE
@@ -388,24 +392,24 @@ body.about .nav-link{
     gap: 7rem;
   }
 
-  /* on mobile: double row becomes 1 column naturally */
-/* MOBILE: keep 2 tiles next to each other */
-.img-group-double{
-  width: 100%;
-  max-width: 100%;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;            /* small + clean */
-  padding: 0;           /* keeps it aligned */
-}
-
-/* make sure tiles can shrink nicely */
-.img-group-double > .double-img{
-  min-width: 0;
-}
+  /* keep 2 tiles next to each other on mobile */
+  .img-group-double{
+    max-width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
 
   footer{
     flex-direction: column;
     gap: 24px;
+  }
+
+  .article-img{ max-width: 100%; }
+  .article-figure{ margin: 28px 0 36px 0; }
+
+  h1{
+    font-size: 22px;
+    margin: 0 0 28px 0;
   }
 }
 
@@ -414,44 +418,3 @@ body.about .nav-link{
 ========================= */
 ::selection{ background: var(--accent-red); color: #000; }
 ::-moz-selection{ background: var(--accent-red); color: #000; }
-
-/* =========================
-   ARTICLE IMAGES —  STYLE
-========================= */
-.article-figure{
-  margin: 40px 0 56px 0;
-  display: flex;
-  justify-content: center;
-}
-
-.article-img{
-  display: block;
-  width: 100%;
-  max-width: 420px;
-  height: auto;
-}
-
-@media (max-width: 600px){
-  .article-img{ max-width: 100%; }
-  .article-figure{ margin: 28px 0 36px 0; }
-}
-
-/* =========================
-   HEADINGS —  STYLE H1
-========================= */
-h1{
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 1.3;
-  letter-spacing: 0em;
-  text-transform: lowercase;
-  margin: 0 0 40px 0;
-}
-
-@media (max-width: 600px){
-  h1{
-    font-size: 22px;
-    margin: 0 0 28px 0;
-  }
-}
