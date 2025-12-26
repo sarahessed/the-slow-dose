@@ -34,7 +34,8 @@
       <div class="nav-left"></div>
 
       <div class="nav-center">
-    <span class="logo">THE SLOW DOSE</span>
+        <!-- logo clickable -->
+        <a href="/" class="logo">THE SLOW DOSE</a>
       </div>
 
       <div class="nav-right">
@@ -53,35 +54,33 @@
         Your browser does not support the audio element.
       </audio>
     </div>
-       
-<div class="homepage-sequence" id="scatter">
 
-  <div class="homepage-sequence" id="scatter">
+    <div class="homepage-sequence" id="scatter">
 
-  <div class="img-group-small">
-    <a href="/articles/your-guide-to-holistic-dental-health.html">
-      <img src="/images/IMG_3975.jpg" alt="your guide to holistic dental health">
-    </a>
-  </div>
+      <div class="img-group-small">
+        <a href="/articles/your-guide-to-holistic-dental-health.html">
+          <img src="/images/IMG_3975.jpg" alt="your guide to holistic dental health">
+        </a>
+      </div>
 
-  <div class="img-group-double">
-    <div class="double-img">
-      <a href="/articles/functional-foods.html">
-        <img class="double-img-img" src="/images/IMG_4024.jpg" alt="functional foods">
-      </a>
+      <div class="img-group-double">
+        <div class="double-img">
+          <a href="/articles/functional-foods.html">
+            <img class="double-img-img" src="/images/IMG_4024.jpg" alt="functional foods">
+          </a>
+        </div>
+
+        <div class="double-img">
+          <a href="/articles/functional-foods.html">
+            <img class="double-img-img" src="/images/IMG_4024.jpg" alt="functional foods">
+          </a>
+        </div>
+      </div>
+
     </div>
+  </div> <!-- ✅ CLOSE CONTAINER BEFORE FOOTER -->
 
-    <div class="double-img">
-      <a href="/articles/functional-foods.html">
-        <img class="double-img-img" src="/images/IMG_4024.jpg" alt="functional foods">
-      </a>
-    </div>
-  </div>
-
-</div>
-
-
- <footer>
+  <footer>
     <div class="footer-left">2025</div>
     <div class="footer-right">
       inbox:
@@ -91,26 +90,26 @@
     </div>
   </footer>
 
-<script>
-  function toggleSound() {
-    var audio = document.getElementById("soothing-audio");
-    var link = document.getElementById("sound-link");
-    var icon = document.getElementById("sound-icon");
-    var text = document.getElementById("sound-text");
+  <script>
+    function toggleSound() {
+      var audio = document.getElementById("soothing-audio");
+      var link = document.getElementById("sound-link");
+      var icon = document.getElementById("sound-icon");
+      var text = document.getElementById("sound-text");
 
-    if (audio.paused) {
-      audio.play();
-      link.classList.add("is-playing");
-      icon.textContent = "❚❚";
-      text.textContent = "Pause";
-    } else {
-      audio.pause();
-      link.classList.remove("is-playing");
-      icon.textContent = "▶";
-      text.textContent = "Play soothing sounds";
+      if (audio.paused) {
+        audio.play();
+        link.classList.add("is-playing");
+        icon.textContent = "❚❚";
+        text.textContent = "Pause";
+      } else {
+        audio.pause();
+        link.classList.remove("is-playing");
+        icon.textContent = "▶";
+        text.textContent = "Play soothing sounds";
+      }
     }
-  }
-</script>
+  </script>
 
 </body>
 </html>
