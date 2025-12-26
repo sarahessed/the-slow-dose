@@ -30,7 +30,6 @@
   --topbar-height: 28px;
   --header-height: 88px;
 
-  /* HOME GRID (PIEN STYLE) */
   --tile-width: 460px;
   --double-gap: 80px;
   --stack-gap: 10rem;
@@ -309,14 +308,14 @@ footer a{
    ARTICLE PAGE
 ========================= */
 body.article{
-  background: #B6BDC8;
+  background: #BDBFCB;
 }
 html:has(body.article){
   background: #B6BDC8;
 }
 
 body.article .topbar{ display: none; }
-body.article .site-header{ background: #B6BDC8; }
+body.article .site-header{ background: #BDBFCB; }
 
 body.article .logo,
 body.article .nav-link{
