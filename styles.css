@@ -51,7 +51,6 @@ html, body{
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* IMPORTANT: set html bg too (prevents Safari “white strip” / rubber-band) */
 html{
   background: #F4E7C6;
 }
@@ -68,22 +67,20 @@ body{
   font-size: var(--body-size);
   line-height: var(--lh-body);
 
-  background: #F4E7C6; /* home default */
+  background: #F4E7C6;
   color: #000;
 }
 
-/* page content should expand and push footer down */
 .container{
   flex: 1 0 auto;
 }
 
-/* footer should never shrink */
 footer{
   flex-shrink: 0;
 }
 
 /* =========================
-   TEXT — FORCE LOWERCASE (EDITORIAL)
+   TEXT
 ========================= */
 p,
 li,
@@ -129,7 +126,7 @@ a:active{
   width: 100%;
   height: var(--header-height);
   z-index: 9998;
-  background: transparent; /* home */
+  background: transparent;
 }
 
 .nav-inner{
@@ -182,12 +179,10 @@ a:active{
            var(--page-padding-bottom);
 }
 
-/* extra ruimte vóór footer op HOME */
 body.home .container{
   padding-bottom: var(--space-after-images);
 }
 
-/* remove accidental home texts */
 body.home .container > h1,
 body.home .container > h2,
 body.home .container > h3,
@@ -198,7 +193,6 @@ body.home .container > p:not(.home-tagline){
   display: none !important;
 }
 
-/* homepage tagline */
 body.home .home-tagline{
   margin: 40px 0 30px 0;
   text-align: center;
@@ -230,14 +224,14 @@ body.home .home-tagline{
 #sound-icon{ font-family: var(--font-body); }
 
 /* =========================
-   SOUND ICON — FORCE NON-EMOJI (CSS ICON)
+   SOUND ICON 
 ========================= */
 #sound-icon{
   width: 16px;
   height: 16px;
   background: #000;
   display: inline-block;
-  font-size: 0;      /* prevents glyph rendering */
+  font-size: 0; 
   line-height: 0;
   flex: 0 0 auto;
 
@@ -245,7 +239,6 @@ body.home .home-tagline{
           mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M5 3.2v9.6L13 8 5 3.2z'/%3E%3C/svg%3E") no-repeat center / contain;
 }
 
-/* when playing: show pause icon */
 #sound-link.is-playing #sound-icon{
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M4 3h3v10H4V3zm5 0h3v10H9V3z'/%3E%3C/svg%3E") no-repeat center / contain;
           mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M4 3h3v10H4V3zm5 0h3v10H9V3z'/%3E%3C/svg%3E") no-repeat center / contain;
@@ -253,7 +246,7 @@ body.home .home-tagline{
 
 
 /* =========================
-   HOMEPAGE IMAGES — STYLE (1 then 2)
+   HOMEPAGE IMAGES
 ========================= */
 .homepage-sequence{
   width: 100%;
@@ -280,7 +273,6 @@ body.home .home-tagline{
   justify-content: center;
 }
 
-/* images */
 .homepage-sequence img{
   width: 100%;
   height: auto;
@@ -294,7 +286,7 @@ body.home .home-tagline{
 }
 
 /* =========================
-   FOOTER — FULL WIDTH (no 100vw hack)
+   FOOTER — FULL WIDTH
 ========================= */
 footer{
   width: 100%;
@@ -385,7 +377,7 @@ body.about .nav-link{
 }
 
 /* =========================
-   HEADINGS — PIEN STYLE H1
+   HEADINGS 
 ========================= */
 h1{
   font-family: var(--font-body);
@@ -415,7 +407,6 @@ h1{
     gap: 7rem;
   }
 
-  /* keep 2 tiles next to each other on mobile */
   .img-group-double{
     max-width: 100%;
     grid-template-columns: repeat(2, minmax(0, 1fr));
