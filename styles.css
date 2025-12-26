@@ -52,7 +52,7 @@ html, body{
 }
 
 html{
-  background: #F4E7C6;
+  background: #F2E3C4;
 }
 
 /* =========================
@@ -67,7 +67,7 @@ body{
   font-size: var(--body-size);
   line-height: var(--lh-body);
 
-  background: #F4E7C6;
+  background: #F2E3C4;
   color: #000;
 }
 
@@ -309,14 +309,14 @@ footer a{
    ARTICLE PAGE
 ========================= */
 body.article{
-  background: #C1C1CB;
+  background: #B6BDC8;
 }
 html:has(body.article){
-  background: #C1C1CB;
+  background: #B6BDC8;
 }
 
 body.article .topbar{ display: none; }
-body.article .site-header{ background: #C1C1CB; }
+body.article .site-header{ background: #B6BDC8; }
 
 body.article .logo,
 body.article .nav-link{
@@ -343,15 +343,15 @@ body.article .nav-link{
    ABOUT PAGE
 ========================= */
 body.about{
-  background: #F6BDC8;
+  background: #F7C1CD;
   color: #fff;
 }
 html:has(body.about){
-  background: #F6BDC8;
+  background: #F7C1CD;
 }
 
 body.about .topbar{ display: none; }
-body.about .site-header{ background: #F6BDC8; }
+body.about .site-header{ background: #F7C1CD; }
 
 body.about .logo,
 body.about .nav-link{
