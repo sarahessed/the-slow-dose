@@ -29,6 +29,12 @@
 
   --topbar-height: 28px;
   --header-height: 88px;
+
+  /* HOME GRID (PIEN STYLE) */
+  --tile-width: 460px;       /* maak kleiner als 520 voor “rustiger” */
+  --double-gap: 80px;        /* ruimte tussen de 2 tiles */
+  --stack-gap: 10rem;        /* verticale afstand tussen rijen */
+  --space-after-images: 140px; /* witruimte vóór footer */
 }
 
 /* =========================
@@ -55,6 +61,7 @@ body{
   background: #F4E7C6; /* home default */
   color: #000;
 }
+
 /* =========================
    TEXT — FORCE LOWERCASE (EDITORIAL)
 ========================= */
@@ -66,7 +73,6 @@ blockquote,
 figcaption{
   text-transform: lowercase;
 }
-
 
 /* LINKS: black, no underline (everywhere) */
 a{
@@ -98,7 +104,7 @@ a:active{
 ========================= */
 .site-header{
   position: fixed;
-  top: 0;                 /* IMPORTANT: same on every page */
+  top: 0;
   left: 0;
   width: 100%;
   height: var(--header-height);
@@ -156,9 +162,13 @@ a:active{
            var(--page-padding-bottom);
 }
 
+/* extra ruimte vóór footer op HOME */
+body.home .container{
+  padding-bottom: var(--space-after-images);
+}
+
 /* =========================
    HOMEPAGE: remove the extra black title/text
-   (keeps ONLY .home-tagline and images)
 ========================= */
 body.home .container > h1,
 body.home .container > h2,
@@ -202,7 +212,7 @@ body.home .home-tagline{
 
 #sound-icon{ font-family: var(--font-body); }
 
-/* Mobile Safari: SVG mask icon, black */
+/* Mobile Safari icon swap */
 @media (max-width: 600px){
   #sound-icon{
     width: 16px;
@@ -222,27 +232,38 @@ body.home .home-tagline{
 }
 
 /* =========================
-   HOMEPAGE IMAGES
+   HOMEPAGE IMAGES —  STYLE (1 then 2)
 ========================= */
+
+/* stack container */
 .homepage-sequence{
   width: 100%;
-  max-width: 1100px;
   margin: 60px auto 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15rem;
-}
-/* =========================
-   HOMEPAGE IMAGE SCALE (DESKTOP)
-========================= */
-.img-group-small,
-.img-group-big,
-.img-group-double{
-  width: 100%;
-  max-width: 520px;  
+  gap: var(--stack-gap);
 }
 
+/* single tile (centered) */
+.img-group-small{
+  width: 100%;
+  max-width: var(--tile-width);
+  margin: 0 auto;
+}
+
+/* double row: wide enough for 2 tiles + gap, centered */
+.img-group-double{
+  width: 100%;
+  max-width: calc((2 * var(--tile-width)) + var(--double-gap));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: var(--tile-width) var(--tile-width);
+  gap: var(--double-gap);
+  justify-content: center; /* centers the two tiles */
+}
+
+/* images */
 .homepage-sequence img{
   width: 100%;
   height: auto;
@@ -256,49 +277,10 @@ body.home .home-tagline{
 }
 
 /* =========================
-    HOMEPAGE GRID: 1 then 2
-========================= */
-
-/* single tile: same width as one column */
-.img-group-small{
-  width: 100%;
-  max-width: 520px;          /* 1 tile breedte */
-  margin: 0 auto;
-}
-
-/* double row container: needs to be wider than a single tile */
-.img-group-double{
-  width: 100%;
-  max-width: 1100px;         /* ruimte voor 2 tiles + gap */
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;                 /* pas aan voor jouw spacing */
-}
-
-/* each tile inside the double row */
-.img-group-double .double-img{
-  width: 100%;
-}
-
-/* images behave */
-.img-group-small img,
-.img-group-double img{
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.img-group-small,
-.img-group-big{
-  width: 100%;
-  max-width: 520px;
-}
-
-/* =========================
-   FOOTER
+   FOOTER — ALWAYS FULL WIDTH
 ========================= */
 footer{
+  width: 100%;
   background: var(--accent-red);
   color: #000;
   padding: 80px 20px;
@@ -321,9 +303,7 @@ body.article{
   background: #C1C1CB;
 }
 
-body.article .topbar{
-  display: none;
-}
+body.article .topbar{ display: none; }
 
 body.article .site-header{
   background: #C1C1CB;
@@ -334,7 +314,7 @@ body.article .nav-link{
   color: #000;
 }
 
-/* "top" link at bottom: lowercase + no underline */
+/* "top" link at bottom */
 .top-link,
 .top-link:link,
 .top-link:visited,
@@ -359,9 +339,7 @@ body.about{
   color: #fff;
 }
 
-body.about .topbar{
-  display: none;
-}
+body.about .topbar{ display: none; }
 
 body.about .site-header{
   background: #F6BDC8;
@@ -372,10 +350,7 @@ body.about .nav-link{
   color: #fff;
 }
 
-/* spacer before footer (optional in HTML: <div class="about-spacer"></div>) */
-.about-spacer{
-  height: 600px;
-}
+.about-spacer{ height: 600px; }
 
 /* =========================
    MOBILE
@@ -391,14 +366,15 @@ body.about .nav-link{
     margin: 30px 0 22px 0;
   }
 
-  .img-group-small,
-  .img-group-big,
-  .img-group-double{
-    width: 100%;
-  }
-
   .homepage-sequence{
     gap: 7rem;
+  }
+
+  /* on mobile: double row becomes 1 column naturally */
+  .img-group-double{
+    max-width: var(--tile-width);
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   footer{
@@ -414,7 +390,7 @@ body.about .nav-link{
 ::-moz-selection{ background: var(--accent-red); color: #000; }
 
 /* =========================
-   ARTICLE IMAGES — PIEN STYLE
+   ARTICLE IMAGES —  STYLE
 ========================= */
 .article-figure{
   margin: 40px 0 56px 0;
@@ -425,22 +401,17 @@ body.about .nav-link{
 .article-img{
   display: block;
   width: 100%;
-  max-width: 420px; 
+  max-width: 420px;
   height: auto;
 }
 
 @media (max-width: 600px){
-  .article-img{
-    max-width: 100%;
-  }
-
-  .article-figure{
-    margin: 28px 0 36px 0;
-  }
+  .article-img{ max-width: 100%; }
+  .article-figure{ margin: 28px 0 36px 0; }
 }
 
 /* =========================
-   HEADINGS — PIEN STYLE H1
+   HEADINGS —  STYLE H1
 ========================= */
 h1{
   font-family: var(--font-body);
@@ -449,15 +420,12 @@ h1{
   line-height: 1.3;
   letter-spacing: 0em;
   text-transform: lowercase;
-  margin: 0 0 40px 0; /* beetje afstand eronder */
+  margin: 0 0 40px 0;
 }
 
-/* mobiel */
 @media (max-width: 600px){
   h1{
     font-size: 22px;
     margin: 0 0 28px 0;
   }
 }
-
-
