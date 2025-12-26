@@ -256,6 +256,46 @@ body.home .home-tagline{
 }
 
 /* =========================
+    HOMEPAGE GRID: 1 then 2
+========================= */
+
+/* single tile: same width as one column */
+.img-group-small{
+  width: 100%;
+  max-width: 520px;          /* 1 tile breedte */
+  margin: 0 auto;
+}
+
+/* double row container: needs to be wider than a single tile */
+.img-group-double{
+  width: 100%;
+  max-width: 1100px;         /* ruimte voor 2 tiles + gap */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;                 /* pas aan voor jouw spacing */
+}
+
+/* each tile inside the double row */
+.img-group-double .double-img{
+  width: 100%;
+}
+
+/* images behave */
+.img-group-small img,
+.img-group-double img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.img-group-small,
+.img-group-big{
+  width: 100%;
+  max-width: 520px;
+}
+
+/* =========================
    FOOTER
 ========================= */
 footer{
