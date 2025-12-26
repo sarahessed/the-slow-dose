@@ -301,6 +301,18 @@ footer a{
   text-decoration: none !important;
 }
 
+html, body{
+  height: 100%;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+}
+
+footer{
+  margin-top: auto;
+}
 
 /* =========================
    ARTICLE PAGE
