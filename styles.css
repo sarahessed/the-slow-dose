@@ -35,7 +35,7 @@
   --double-gap: 60px;
 
   /* NEW: single tile slightly larger than the double tiles */
-  --single-width: 520px;
+  --single-width: 360px;
 
   --stack-gap: 10rem;
   --space-after-images: 140px;
