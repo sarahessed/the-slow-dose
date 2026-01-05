@@ -31,11 +31,11 @@
   --header-height: 88px;
 
   /* OLD tile sizing (double row) */
-  --tile-width: 420px;
+  --tile-width: 400px;
   --double-gap: 60px;
 
   /* NEW: single tile slightly larger than the double tiles */
-  --single-width: 360px;
+  --single-width: 500px;
 
   --stack-gap: 10rem;
   --space-after-images: 140px;
