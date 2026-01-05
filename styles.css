@@ -31,11 +31,11 @@
   --header-height: 88px;
 
   /* double row sizing */
-  --tile-width: 400px;
+  --tile-width: 380px;
   --double-gap: 60px;
 
   /* single row sizing */
-  --single-width: 300px;
+  --single-width: 500px;
 
   --stack-gap: 10rem;
   --space-after-images: 140px;
