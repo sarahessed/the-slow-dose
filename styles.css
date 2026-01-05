@@ -284,6 +284,20 @@ body.home .home-tagline{
   transform: scale(1.03);
 }
 
+.img-group-small.is-small{
+  max-width: 380px;   
+}
+
+.img-group-small.is-wide{
+  max-width: 540px;  
+}
+
+.img-group-double{
+  max-width: calc((2 * 500px) + var(--double-gap));
+  grid-template-columns: 500px 460px;               
+}
+
+
 /* =========================
    FOOTER — FULL WIDTH
 ========================= */
