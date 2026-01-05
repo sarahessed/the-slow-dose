@@ -269,7 +269,7 @@ body.home .home-tagline{
 
 /* double row (old sizing & ratio) */
 .img-group-double{
-  width: 100%;
+  width: 80%;
   max-width: calc((2 * var(--tile-width)) + var(--double-gap));
   margin: 0 auto;
   display: grid;
