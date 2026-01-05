@@ -30,8 +30,13 @@
   --topbar-height: 28px;
   --header-height: 88px;
 
+  /* OLD tile sizing (double row) */
   --tile-width: 460px;
   --double-gap: 80px;
+
+  /* NEW: single tile slightly larger than the double tiles */
+  --single-width: 560px;
+
   --stack-gap: 10rem;
   --space-after-images: 140px;
 }
@@ -243,7 +248,6 @@ body.home .home-tagline{
           mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M4 3h3v10H4V3zm5 0h3v10H9V3z'/%3E%3C/svg%3E") no-repeat center / contain;
 }
 
-
 /* =========================
    HOMEPAGE IMAGES
 ========================= */
@@ -256,12 +260,14 @@ body.home .home-tagline{
   gap: var(--stack-gap);
 }
 
-.img-group-small{
+/* single tile (slightly larger than the double row tiles) */
+.img-group-single{
   width: 100%;
-  max-width: var(--tile-width);
+  max-width: var(--single-width);
   margin: 0 auto;
 }
 
+/* double row (old sizing & ratio) */
 .img-group-double{
   width: 100%;
   max-width: calc((2 * var(--tile-width)) + var(--double-gap));
@@ -283,20 +289,6 @@ body.home .home-tagline{
 .homepage-sequence a:hover img{
   transform: scale(1.03);
 }
-
-.img-group-small.is-small{
-  max-width: 380px;   
-}
-
-.img-group-small.is-wide{
-  max-width: 540px;  
-}
-
-.img-group-double{
-  max-width: calc((2 * 500px) + var(--double-gap));
-  grid-template-columns: 500px 460px;               
-}
-
 
 /* =========================
    FOOTER — FULL WIDTH
@@ -420,6 +412,12 @@ h1{
     gap: 7rem;
   }
 
+  /* single becomes full width on mobile */
+  .img-group-single{
+    max-width: 100%;
+  }
+
+  /* double becomes two flexible columns on mobile */
   .img-group-double{
     max-width: 100%;
     grid-template-columns: repeat(2, minmax(0, 1fr));
