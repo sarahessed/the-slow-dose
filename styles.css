@@ -31,8 +31,8 @@
   --header-height: 88px;
 
   /* OLD tile sizing (double row) */
-  --tile-width: 460px;
-  --double-gap: 80px;
+  --tile-width: 420px;
+  --double-gap: 60px;
 
   /* NEW: single tile slightly larger than the double tiles */
   --single-width: 560px;
@@ -269,7 +269,7 @@ body.home .home-tagline{
 
 /* double row (old sizing & ratio) */
 .img-group-double{
-  width: 80%;
+  width: 100%;
   max-width: calc((2 * var(--tile-width)) + var(--double-gap));
   margin: 0 auto;
   display: grid;
