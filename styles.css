@@ -423,7 +423,7 @@ h1{
 
   /* single becomes full width on mobile */
   .img-group-single{
-    max-width: 100%;
+    max-width: 80%;
   }
 
   /* double becomes two flexible columns on mobile */
